@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7bjakgxejx6n"]
+
+[ext_resource type="Script" path="res://Scripts/little_guy.gd" id="1_yilio"]
+[ext_resource type="Texture2D" uid="uid://dasp54l6u0e2k" path="res://Sprites/CreatureBody/hexagon_body.png" id="2_fahwl"]
+[ext_resource type="Texture2D" uid="uid://c5bo2fcaoapbt" path="res://Sprites/CreatureEyes/round_eyes.png" id="3_inlk2"]
+[ext_resource type="Texture2D" uid="uid://bkp2xsdxp853" path="res://Sprites/CreatureMouth/w_mouth.png" id="4_aq2hr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cexqr"]
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8jlyx"]
+radius = 62.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul6co"]
+size = Vector2(124, 124)
+
+[node name="LittleGuy" type="RigidBody2D" groups=["little_guy"]]
+texture_filter = 1
+input_pickable = true
+mass = 100.0
+physics_material_override = SubResource("PhysicsMaterial_cexqr")
+contact_monitor = true
+max_contacts_reported = 16
+script = ExtResource("1_yilio")
+
+[node name="LittleGuyBody" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fahwl")
+
+[node name="LittleGuyEyes" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_inlk2")
+
+[node name="LittleGuyMouth" type="Sprite2D" parent="."]
+position = Vector2(0, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_aq2hr")
+
+[node name="CircleCollision" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_8jlyx")
+disabled = true
+
+[node name="TriangleCollision" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(60, 61, -60, 61, 0, -60)
+disabled = true
+
+[node name="SquareCollision" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ul6co")
+disabled = true
+
+[node name="HexagonCollision" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(62, 0, 30, 62, -30, 62, -62, 0, -30, -62, 30, -62)
+disabled = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

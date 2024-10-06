@@ -1,0 +1,1481 @@
+[gd_scene load_steps=44 format=3 uid="uid://c0rensp4qvsvk"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_b5e7l"]
+[ext_resource type="PackedScene" uid="uid://cjk0hu4amu4hb" path="res://Scenes/ParallaxBG.tscn" id="1_g22sh"]
+[ext_resource type="FontFile" uid="uid://cc3qabhkm6lw4" path="res://Fonts/FifteenNarrow.ttf" id="2_nxc55"]
+[ext_resource type="PackedScene" uid="uid://cxaa0ei4vsvcf" path="res://Scenes/StageObjects/GuySpawner.tscn" id="3_7ymsu"]
+[ext_resource type="Texture2D" uid="uid://b8vojl81ldxg5" path="res://Sprites/little_guys_logo.png" id="4_dsyk7"]
+[ext_resource type="Texture2D" uid="uid://dasp54l6u0e2k" path="res://Sprites/CreatureBody/hexagon_body.png" id="5_5sjp1"]
+[ext_resource type="Texture2D" uid="uid://be43avm0au6pl" path="res://Sprites/CreatureBody/circle_body.png" id="5_umv7v"]
+[ext_resource type="Texture2D" uid="uid://bbtxbkgdx76lu" path="res://Sprites/CreatureEyes/cyclops_eye.png" id="6_80qjx"]
+[ext_resource type="Texture2D" uid="uid://c5bo2fcaoapbt" path="res://Sprites/CreatureEyes/round_eyes.png" id="6_uvvgq"]
+[ext_resource type="Texture2D" uid="uid://w7tjr8571g84" path="res://Sprites/CreatureMouth/grin_mouth.png" id="7_1wl56"]
+[ext_resource type="Texture2D" uid="uid://bkp2xsdxp853" path="res://Sprites/CreatureMouth/w_mouth.png" id="7_fllr3"]
+[ext_resource type="Texture2D" uid="uid://dkmkbbfeptxq" path="res://Sprites/CreatureBody/red_square.png" id="8_psbo7"]
+[ext_resource type="Texture2D" uid="uid://dfyuffj356eel" path="res://Sprites/CreatureEyes/glasses_eyes.png" id="9_rej5f"]
+[ext_resource type="Texture2D" uid="uid://dpyrf5dbtd3x4" path="res://Sprites/CreatureMouth/lips_mouth.png" id="10_g0woi"]
+[ext_resource type="Texture2D" uid="uid://wcuqe5fkbw6k" path="res://Sprites/CreatureBody/triangle_body.png" id="11_110cl"]
+[ext_resource type="Texture2D" uid="uid://cd1xukcvbnye1" path="res://Sprites/CreatureEyes/heart_eyes.png" id="12_vuvl7"]
+[ext_resource type="Texture2D" uid="uid://b1mcegbs2q4eg" path="res://Sprites/CreatureMouth/stache_mouth.png" id="13_lfqxb"]
+[ext_resource type="Texture2D" uid="uid://dhkainrs248fc" path="res://Sprites/StageParts/guy_pipeline.png" id="17_65wi4"]
+[ext_resource type="Texture2D" uid="uid://b677uoslck887" path="res://Sprites/Screenshots/tutorial_hud.png" id="18_61dop"]
+[ext_resource type="PackedScene" uid="uid://ckny1qfrmcpm7" path="res://Scenes/StageObjects/StagePicker.tscn" id="20_h7lk6"]
+[ext_resource type="Texture2D" uid="uid://h8pd83jjgdr4" path="res://Sprites/little_guy_tiny.png" id="20_i2cxt"]
+[ext_resource type="PackedScene" uid="uid://bk250r1huib6d" path="res://Scenes/StageObjects/Seesaw.tscn" id="20_p2ug4"]
+[ext_resource type="Texture2D" uid="uid://bys166oekr06o" path="res://Sprites/Screenshots/level_preview_basic.png" id="21_5slgu"]
+[ext_resource type="PackedScene" uid="uid://c32i375opwxt0" path="res://Scenes/StageObjects/SmallSpinner.tscn" id="21_7fjtd"]
+[ext_resource type="Texture2D" uid="uid://dwfdd4yrx6omr" path="res://Sprites/little_guy_blep.png" id="21_nbqqu"]
+[ext_resource type="Texture2D" uid="uid://d17pin8eimhu7" path="res://Sprites/ramchops_transparent.png" id="22_1d4fd"]
+[ext_resource type="PackedScene" uid="uid://tub3gd2n1d1n" path="res://Scenes/StageObjects/LongMovingPlatform.tscn" id="22_11gbd"]
+[ext_resource type="Texture2D" uid="uid://26kdrapvwjfe" path="res://Sprites/Screenshots/level_preview_hourglass.png" id="22_sx8g6"]
+[ext_resource type="Texture2D" uid="uid://c0qcjtbyppnb8" path="res://Sprites/Screenshots/level_preview_cement_mixer.png" id="23_6o72k"]
+[ext_resource type="PackedScene" uid="uid://dev4xxofnuqrk" path="res://Scenes/StageObjects/Sweeper.tscn" id="23_42h1c"]
+[ext_resource type="Texture2D" uid="uid://cxhdllh04qixr" path="res://Sprites/Screenshots/level_preview_pachinko.png" id="23_sdt4t"]
+[ext_resource type="Texture2D" uid="uid://dy5qgarpulfgl" path="res://icon.svg" id="23_sybpb"]
+[ext_resource type="PackedScene" uid="uid://bdyj6ewjo5byt" path="res://Scenes/sfx_player.tscn" id="24_pgekk"]
+[ext_resource type="Texture2D" uid="uid://br3ios6y8dak2" path="res://Sprites/Screenshots/level_preview_blender.png" id="25_nk4kt"]
+[ext_resource type="AudioStream" uid="uid://d1msk5iookcgi" path="res://Audio/BGM/Jaunty Gumption 146 FULL MIX.mp3" id="25_nsnrd"]
+[ext_resource type="Texture2D" uid="uid://claltoh1p36t5" path="res://Sprites/Screenshots/level_preview_polyrhythm.png" id="25_t186u"]
+[ext_resource type="Texture2D" uid="uid://diqrslpq2t410" path="res://Sprites/Screenshots/level_preview_osha.png" id="27_pnbu2"]
+[ext_resource type="Texture2D" uid="uid://cfjgnbliuck1n" path="res://Sprites/Screenshots/level_preview_shaker.png" id="28_t54ba"]
+[ext_resource type="Texture2D" uid="uid://bvt7ho3nhbi2w" path="res://Sprites/Screenshots/level_preview_football.png" id="29_dhkea"]
+[ext_resource type="Texture2D" uid="uid://dyd1h4nx8hdib" path="res://Sprites/Screenshots/level_preview_bottomless.png" id="30_a8ubc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo83n"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 4.0
+expand_margin_top = 20.0
+expand_margin_right = 4.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwdnk"]
+bg_color = Color(0, 0.541176, 0.67451, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b15eb"]
+bg_color = Color(0, 0.8, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_b5e7l")
+
+[node name="AutoSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_g22sh")]
+
+[node name="MainMenuCanvas" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="MainMenuCanvas"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -386.0
+offset_right = 832.0
+offset_bottom = 382.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainMenuCanvas"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = 316.0
+offset_right = 832.0
+offset_bottom = 382.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "Ludum Dare 56 - Tiny Creatures"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MainMenuCanvas"]
+offset_left = 128.0
+offset_top = 360.0
+offset_right = 768.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 64
+text = "PLAY"
+
+[node name="TutorialButton" type="Button" parent="MainMenuCanvas"]
+offset_left = 128.0
+offset_top = 488.0
+offset_right = 416.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 64
+text = "TUTORIAL"
+
+[node name="OptionsButton" type="Button" parent="MainMenuCanvas"]
+offset_left = 480.0
+offset_top = 488.0
+offset_right = 768.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 64
+text = "OPTIONS"
+
+[node name="CreditsButton" type="Button" parent="MainMenuCanvas"]
+offset_left = 128.0
+offset_top = 616.0
+offset_right = 416.0
+offset_bottom = 728.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 64
+text = "CREDITS"
+
+[node name="CreditsButton2" type="Button" parent="MainMenuCanvas"]
+visible = false
+offset_left = 128.0
+offset_top = 616.0
+offset_right = 768.0
+offset_bottom = 728.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 64
+text = "CREDITS"
+
+[node name="QuitButton" type="Button" parent="MainMenuCanvas"]
+offset_left = 480.0
+offset_top = 616.0
+offset_right = 768.0
+offset_bottom = 728.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 64
+text = "QUIT"
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuCanvas"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LittleGuysLogo" type="Sprite2D" parent="MainMenuCanvas"]
+position = Vector2(448, 216)
+texture = ExtResource("4_dsyk7")
+
+[node name="GuySpawner" parent="." groups=["stage_object"] instance=ExtResource("3_7ymsu")]
+position = Vector2(1216, 32)
+
+[node name="TutorialCanvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="TutorialCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 64.0
+offset_right = 736.0
+offset_bottom = 832.0
+grow_horizontal = 2
+
+[node name="Heading" type="Label" parent="TutorialCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 72
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialGuy" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -258.0
+offset_right = -472.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_5sjp1")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_80qjx")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_1wl56")
+
+[node name="TutorialGuy2" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -218.0
+offset_right = -384.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_psbo7")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_rej5f")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_g0woi")
+
+[node name="TutorialGuy3" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -186.0
+offset_right = -512.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_110cl")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_vuvl7")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_lfqxb")
+
+[node name="TutorialGuy4" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -552.0
+offset_top = -154.0
+offset_right = -424.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_umv7v")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_uvvgq")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_fllr3")
+
+[node name="TutorialGuy5" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -162.0
+offset_right = -80.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_umv7v")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_uvvgq")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_fllr3")
+
+[node name="TutorialGuy6" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -218.0
+offset_right = -72.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_umv7v")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_rej5f")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy6"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_lfqxb")
+
+[node name="TutorialGuy7" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -274.0
+offset_right = -88.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_umv7v")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_80qjx")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy7"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_g0woi")
+
+[node name="TutorialGuy8" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -162.0
+offset_right = 48.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_psbo7")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_uvvgq")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy8"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_g0woi")
+
+[node name="TutorialGuy9" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -218.0
+offset_right = 56.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_110cl")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_uvvgq")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy9"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_1wl56")
+
+[node name="TutorialGuy10" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -274.0
+offset_right = 48.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_5sjp1")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_uvvgq")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy10"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_lfqxb")
+
+[node name="TutorialGuy11" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -162.0
+offset_right = 192.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_umv7v")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy11"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_rej5f")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy11"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_fllr3")
+
+[node name="TutorialGuy12" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = -218.0
+offset_right = 176.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_psbo7")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy12"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_vuvl7")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy12"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_fllr3")
+
+[node name="TutorialGuy13" type="TextureRect" parent="TutorialCanvas"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 72.0
+offset_top = -274.0
+offset_right = 200.0
+offset_bottom = -146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_110cl")
+
+[node name="GuyEyes" type="TextureRect" parent="TutorialCanvas/TutorialGuy13"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_80qjx")
+
+[node name="GuyMouth" type="TextureRect" parent="TutorialCanvas/TutorialGuy13"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 32.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_fllr3")
+
+[node name="TextureRect" type="TextureRect" parent="TutorialCanvas"]
+offset_left = 1208.0
+offset_top = 192.0
+offset_right = 1272.0
+offset_bottom = 256.0
+texture = ExtResource("17_65wi4")
+
+[node name="Label2" type="Label" parent="TutorialCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -696.0
+offset_top = 520.0
+offset_right = -296.0
+offset_bottom = 769.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 28
+text = "These are Little Guys!
+They are strange creatures that
+like being tossed around.
+
+Don't let them fall off the screen or
+it's Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="TutorialCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_top = 352.0
+offset_right = 160.0
+offset_bottom = 769.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 28
+text = "Your goal is to collect as many
+Little Guys as possible.
+
+When you click on a Little Guy,
+you collect them. You can collect 
+more in one click if the Little Guy
+shares traits with their neighbors!
+
+Clicking on Little Guys drops 3 more
+into the field!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="TutorialCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 184.0
+offset_top = 336.0
+offset_right = 696.0
+offset_bottom = 768.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 28
+text = "This is a pipeline. 
+Little Guys will appear here!
+If there are many in a level,
+the new Little Guy will pick one at random.
+
+If it's not fast enough for you, press SPACE BAR
+to make it quickly push Little Guys out!
+
+The pipes will get faster the more Little Guys
+you clear. Be careful of overflow!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseTutorialButton" type="Button" parent="TutorialCanvas"]
+offset_left = 1408.0
+offset_top = 112.0
+offset_right = 1488.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "x"
+
+[node name="TutorialNextButton" type="Button" parent="TutorialCanvas"]
+offset_left = 1088.0
+offset_top = 760.0
+offset_right = 1408.0
+offset_bottom = 816.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 32
+text = "NEXT"
+
+[node name="TutorialCanvas2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="TutorialCanvas2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 64.0
+offset_right = 736.0
+offset_bottom = 832.0
+grow_horizontal = 2
+
+[node name="CloseTutorialButton2" type="Button" parent="TutorialCanvas2"]
+offset_left = 1408.0
+offset_top = 112.0
+offset_right = 1488.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "x"
+
+[node name="TutorialBackButton" type="Button" parent="TutorialCanvas2"]
+offset_left = 192.0
+offset_top = 760.0
+offset_right = 512.0
+offset_bottom = 816.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 32
+text = "BACK"
+
+[node name="Heading" type="Label" parent="TutorialCanvas2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 72
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="TutorialCanvas2"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 192.0
+offset_right = 673.0
+offset_bottom = 704.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 28
+text = "This is the statistics panel. You can learn more about your current run here!
+
+SCORE - Your score. Bigger groups of Little Guys are worth more!
+BEST - Your highest score ever on this board.
+CLEAR - How many Little Guys you have collected this run.
+LEVEL - You gain level by collecting Little Guys. The higher this is,
+the faster the pipeline will be.
+TIME - Time elapsed since the start of the game.
+NEXT - Preview of the Little Guys that will spawn next."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TutorialCanvas2"]
+offset_left = 128.0
+offset_top = 200.0
+offset_right = 576.0
+offset_bottom = 698.0
+texture = ExtResource("18_61dop")
+expand_mode = 1
+
+[node name="LevelPickerCanvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel2" type="Panel" parent="LevelPickerCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 64.0
+offset_right = 736.0
+offset_bottom = 832.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseLevelPickerButton" type="Button" parent="LevelPickerCanvas"]
+offset_left = 1408.0
+offset_top = 112.0
+offset_right = 1488.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "x"
+metadata/_edit_use_anchors_ = true
+
+[node name="BasicBlockPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -672.0
+offset_top = 88.0
+offset_right = -480.0
+offset_bottom = 440.0
+grow_horizontal = 2
+stage_name = "Basic"
+stage_preview_texture = ExtResource("21_5slgu")
+stage_id = "basic_blocks"
+stage_scene_path = "res://Scenes/GameLevels/TestScene.tscn"
+
+[node name="HourglassPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -416.0
+offset_top = 88.0
+offset_right = -224.0
+offset_bottom = 440.0
+grow_horizontal = 2
+stage_name = "Hourglass"
+stage_preview_texture = ExtResource("22_sx8g6")
+stage_id = "hourglass"
+stage_scene_path = "res://Scenes/GameLevels/HourglassScene.tscn"
+
+[node name="PachinkoPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 88.0
+offset_right = 32.0
+offset_bottom = 440.0
+grow_horizontal = 2
+stage_name = "Pachinko"
+stage_preview_texture = ExtResource("23_sdt4t")
+stage_id = "pachinko"
+stage_scene_path = "res://Scenes/GameLevels/PachinkoScene.tscn"
+
+[node name="SpinnerPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 96.0
+offset_top = 88.0
+offset_right = 288.0
+offset_bottom = 440.0
+grow_horizontal = 2
+stage_name = "Spinner"
+stage_preview_texture = ExtResource("23_6o72k")
+stage_id = "spinner"
+stage_scene_path = "res://Scenes/GameLevels/SpinnerScene.tscn"
+
+[node name="BlenderPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 352.0
+offset_top = 88.0
+offset_right = 544.0
+offset_bottom = 440.0
+grow_horizontal = 2
+stage_name = "Blender"
+stage_preview_texture = ExtResource("25_nk4kt")
+stage_id = "blender"
+stage_scene_path = "res://Scenes/GameLevels/Blender.tscn"
+
+[node name="PolyrhythmPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -672.0
+offset_top = 456.0
+offset_right = -480.0
+offset_bottom = 808.0
+grow_horizontal = 2
+stage_name = "Polyrhythm"
+stage_preview_texture = ExtResource("25_t186u")
+stage_id = "polyrhythm"
+stage_scene_path = "res://Scenes/GameLevels/PlatformingScene.tscn"
+
+[node name="NoOSHAPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -416.0
+offset_top = 456.0
+offset_right = -224.0
+offset_bottom = 808.0
+grow_horizontal = 2
+stage_name = "No OSHA"
+stage_preview_texture = ExtResource("27_pnbu2")
+stage_id = "no_osha"
+stage_scene_path = "res://Scenes/GameLevels/NoOSHA.tscn"
+
+[node name="ShakePicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 456.0
+offset_right = 32.0
+offset_bottom = 808.0
+grow_horizontal = 2
+stage_name = "Earthquake"
+stage_preview_texture = ExtResource("28_t54ba")
+stage_id = "shake"
+stage_scene_path = "res://Scenes/GameLevels/ShakeWell.tscn"
+
+[node name="FootballPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 96.0
+offset_top = 456.0
+offset_right = 288.0
+offset_bottom = 808.0
+grow_horizontal = 2
+stage_name = "Football"
+stage_preview_texture = ExtResource("29_dhkea")
+stage_id = "football"
+stage_scene_path = "res://Scenes/GameLevels/WaveScene.tscn"
+
+[node name="FootballPicker2" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 352.0
+offset_top = 456.0
+offset_right = 544.0
+offset_bottom = 808.0
+grow_horizontal = 2
+stage_name = "Bottomless"
+stage_preview_texture = ExtResource("30_a8ubc")
+stage_id = "bottomless"
+stage_scene_path = "F:/Users/RamBanjo/Documents/matching-little-guys/Scenes/GameLevels/BottomlessScene.tscn"
+
+[node name="OptionsCanvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel3" type="Panel" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 64.0
+offset_right = 736.0
+offset_bottom = 832.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseOptionsButton" type="Button" parent="OptionsCanvas"]
+offset_left = 1408.0
+offset_top = 112.0
+offset_right = 1488.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Heading" type="Label" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 72
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGMLabel" type="Label" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -672.0
+offset_top = 248.0
+offset_right = -544.0
+offset_bottom = 328.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "BGM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGMSlider" type="HSlider" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -480.0
+offset_top = 256.0
+offset_right = 32.0
+offset_bottom = 320.0
+grow_horizontal = 2
+theme_override_icons/grabber = ExtResource("20_i2cxt")
+theme_override_icons/grabber_highlight = ExtResource("21_nbqqu")
+theme_override_styles/slider = SubResource("StyleBoxFlat_uo83n")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_nwdnk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_b15eb")
+step = 0.0
+value = 100.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="SFXLabel" type="Label" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -672.0
+offset_top = 376.0
+offset_right = -544.0
+offset_bottom = 456.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -480.0
+offset_top = 384.0
+offset_right = 32.0
+offset_bottom = 448.0
+grow_horizontal = 2
+theme_override_icons/grabber = ExtResource("20_i2cxt")
+theme_override_icons/grabber_highlight = ExtResource("21_nbqqu")
+theme_override_styles/slider = SubResource("StyleBoxFlat_uo83n")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_nwdnk")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_b15eb")
+step = 0.0
+value = 100.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="ResLabel" type="Label" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 480.0
+offset_right = -96.0
+offset_bottom = 560.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "Resolution"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResList" type="ItemList" parent="OptionsCanvas"]
+offset_left = 320.0
+offset_top = 576.0
+offset_right = 512.0
+offset_bottom = 768.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 32
+item_count = 4
+item_0/text = "800 x 450"
+item_1/text = "1280 x 720"
+item_2/text = "1600 x 900"
+item_3/text = "1920 x 1080"
+
+[node name="ConfirmResolutionButton" type="Button" parent="OptionsCanvas"]
+offset_left = 576.0
+offset_top = 704.0
+offset_right = 832.0
+offset_bottom = 768.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 32
+text = "Confirm Resolution"
+
+[node name="FullScreenToggleButton" type="Button" parent="OptionsCanvas"]
+offset_left = 576.0
+offset_top = 576.0
+offset_right = 832.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 32
+text = "Toggle Full Screen"
+
+[node name="CreditsCanvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel4" type="Panel" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 64.0
+offset_right = 736.0
+offset_bottom = 832.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseCreditButton" type="Button" parent="CreditsCanvas"]
+offset_left = 1408.0
+offset_top = 112.0
+offset_right = 1488.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Heading2" type="Label" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 72
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heading3" type="Label" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -720.0
+offset_top = 512.0
+offset_right = -336.0
+offset_bottom = 766.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 32
+text = "Level Design
+Game Design
+Programming
+Art
+Sound Effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heading6" type="Label" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_top = 192.0
+offset_right = 288.0
+offset_bottom = 448.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 32
+text = "Fifteen font is made by
+James Kilfiger,
+used under SIL Open Font License v1.1 
+(https://sites.google.com/site/jameskilfiger/)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heading8" type="Label" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 512.0
+offset_right = 320.0
+offset_bottom = 768.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 32
+text = "\"Jaunty Gumption\", \"Move Forward\"
+Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heading4" type="Label" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -720.0
+offset_top = 160.0
+offset_right = -336.0
+offset_bottom = 232.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "RamChops Games
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heading5" type="Label" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 328.0
+offset_top = 472.0
+offset_right = 712.0
+offset_bottom = 544.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "Made with Godot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CreditsCanvas"]
+offset_left = 144.0
+offset_top = 232.0
+offset_right = 400.0
+offset_bottom = 488.0
+texture = ExtResource("22_1d4fd")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="CreditsCanvas"]
+offset_left = 1256.0
+offset_top = 344.0
+offset_right = 1384.0
+offset_bottom = 472.0
+texture = ExtResource("23_sybpb")
+
+[node name="Seesaw" parent="." instance=ExtResource("20_p2ug4")]
+position = Vector2(1088, 360)
+
+[node name="Seesaw2" parent="." instance=ExtResource("20_p2ug4")]
+position = Vector2(1344, 360)
+
+[node name="SmallSpinner" parent="." instance=ExtResource("21_7fjtd")]
+position = Vector2(1216, 256)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("22_11gbd")]
+position = Vector2(1216, 784)
+left_movement = 64.0
+right_movement = 64.0
+terminal_delay = 0.2
+
+[node name="SmallSpinner2" parent="." instance=ExtResource("21_7fjtd")]
+position = Vector2(896, 784)
+
+[node name="SmallSpinner3" parent="." instance=ExtResource("21_7fjtd")]
+position = Vector2(1536, 784)
+spin_direction = 1
+
+[node name="SmallSpinner4" parent="." instance=ExtResource("21_7fjtd")]
+position = Vector2(896, 624)
+
+[node name="SmallSpinner5" parent="." instance=ExtResource("21_7fjtd")]
+position = Vector2(1536, 624)
+spin_direction = 1
+
+[node name="SmallSpinner6" parent="." instance=ExtResource("21_7fjtd")]
+position = Vector2(896, 464)
+
+[node name="SmallSpinner7" parent="." instance=ExtResource("21_7fjtd")]
+position = Vector2(1536, 464)
+spin_direction = 1
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("23_42h1c")]
+position = Vector2(1456, 512)
+left_movement = 480.0
+right_movement = 0.0
+movement_speed = 200.0
+current_direction = Vector2(-1, 0)
+
+[node name="SFXPlayer" parent="." instance=ExtResource("24_pgekk")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_nsnrd")
+parameters/looping = true
+
+[connection signal="timeout" from="AutoSpawnTimer" to="." method="_on_auto_spawn_timer_timeout"]
+[connection signal="pressed" from="MainMenuCanvas/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/CreditsButton2" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MainMenuCanvas/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="TutorialCanvas/CloseTutorialButton" to="." method="_on_close_tutorial_button_pressed"]
+[connection signal="pressed" from="TutorialCanvas/TutorialNextButton" to="." method="_on_tutorial_next_button_pressed"]
+[connection signal="pressed" from="TutorialCanvas2/CloseTutorialButton2" to="." method="_on_close_tutorial_button_2_pressed"]
+[connection signal="pressed" from="TutorialCanvas2/TutorialBackButton" to="." method="_on_tutorial_back_button_pressed"]
+[connection signal="pressed" from="LevelPickerCanvas/CloseLevelPickerButton" to="." method="_on_close_level_picker_button_pressed"]
+[connection signal="pressed" from="OptionsCanvas/CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
+[connection signal="drag_ended" from="OptionsCanvas/BGMSlider" to="." method="_on_bgm_slider_drag_ended"]
+[connection signal="drag_ended" from="OptionsCanvas/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="pressed" from="OptionsCanvas/ConfirmResolutionButton" to="." method="_on_confirm_resolution_button_pressed"]
+[connection signal="pressed" from="OptionsCanvas/FullScreenToggleButton" to="." method="_on_full_screen_toggle_button_pressed"]
+[connection signal="pressed" from="CreditsCanvas/CloseCreditButton" to="." method="_on_close_credit_button_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1msk5iookcgi"
+path="res://.godot/imported/Jaunty Gumption 146 FULL MIX.mp3-2a04e5d9f51ddc6d4b8f8fbfe648b312.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGM/Jaunty Gumption 146 FULL MIX.mp3"
+dest_files=["res://.godot/imported/Jaunty Gumption 146 FULL MIX.mp3-2a04e5d9f51ddc6d4b8f8fbfe648b312.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

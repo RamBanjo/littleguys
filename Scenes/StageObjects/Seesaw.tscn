@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk250r1huib6d"]
+
+[ext_resource type="Texture2D" uid="uid://dfn17pbsl3wv4" path="res://Sprites/StageParts/see_saw.png" id="1_ube47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqgkq"]
+size = Vector2(128, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sqpp"]
+radius = 8.0
+
+[node name="Seesaw" type="PinJoint2D" groups=["stage_object"]]
+node_a = NodePath("Seesaw")
+node_b = NodePath("SeesawCenter")
+
+[node name="Seesaw" type="RigidBody2D" parent="."]
+mass = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Seesaw"]
+texture = ExtResource("1_ube47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Seesaw"]
+shape = SubResource("RectangleShape2D_dqgkq")
+
+[node name="SeesawCenter" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SeesawCenter"]
+shape = SubResource("CircleShape2D_1sqpp")

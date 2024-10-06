@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://exyvr04coya0"
+path="res://.godot/imported/Move Forward 90bpm Backing+Percussion.mp3-bc8483258b05bb3b70a1877ac775dd5f.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGM/Move Forward 90bpm Backing+Percussion.mp3"
+dest_files=["res://.godot/imported/Move Forward 90bpm Backing+Percussion.mp3-bc8483258b05bb3b70a1877ac775dd5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

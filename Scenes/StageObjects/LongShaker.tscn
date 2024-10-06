@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj5ogaqopqwth"]
+
+[ext_resource type="Script" path="res://Scripts/vertical_moving_platform.gd" id="1_dddwc"]
+[ext_resource type="Texture2D" uid="uid://chik01cxeehol" path="res://Sprites/StageParts/shaker_long.png" id="2_8iqa0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pk7vr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5typ"]
+size = Vector2(512, 32)
+
+[node name="MovingPlatform" type="AnimatableBody2D" groups=["stage_object"]]
+physics_material_override = SubResource("PhysicsMaterial_pk7vr")
+script = ExtResource("1_dddwc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8iqa0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n5typ")

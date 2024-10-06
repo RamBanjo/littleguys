@@ -1,0 +1,398 @@
+[gd_scene load_steps=7 format=3 uid="uid://b10noqspuk4hb"]
+
+[ext_resource type="Script" path="res://Scripts/game_ui.gd" id="1_j4t1v"]
+[ext_resource type="FontFile" uid="uid://cc3qabhkm6lw4" path="res://Fonts/FifteenNarrow.ttf" id="2_dbcpg"]
+[ext_resource type="FontFile" uid="uid://bwmow5p8bnn5l" path="res://Fonts/Flamingo-Regular.otf" id="2_nfcnt"]
+[ext_resource type="PackedScene" uid="uid://c7bjakgxejx6n" path="res://Scenes/LittleGuy.tscn" id="3_241lt"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_dl0n3"]
+device = -1
+pressed = true
+keycode = 80
+unicode = 112
+
+[sub_resource type="Shortcut" id="Shortcut_dk05t"]
+events = [SubResource("InputEventKey_dl0n3")]
+
+[node name="FullInterface" type="CanvasLayer"]
+script = ExtResource("1_j4t1v")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -386.0
+offset_right = 832.0
+offset_bottom = 382.0
+grow_vertical = 2
+
+[node name="ScoreText" type="Label" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 320.0
+offset_right = 704.0
+offset_bottom = 448.0
+theme_override_fonts/normal_font = ExtResource("2_nfcnt")
+theme_override_font_sizes/normal_font_size = 84
+bbcode_enabled = true
+text = "[center]000000000000[/center]"
+
+[node name="HighScoreGratz" type="Label" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 448.0
+offset_right = 640.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 64
+text = "CONGRATULATIONS!
+NEW HIGH SCORE!"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 656.0
+offset_right = 320.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 64
+text = "RETRY"
+
+[node name="QuitButton" type="Button" parent="GameOverPanel"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 656.0
+offset_right = 640.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 64
+text = "BACK"
+
+[node name="PauseButton" type="Button" parent="."]
+process_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+shortcut = SubResource("Shortcut_dk05t")
+text = "⏸️"
+
+[node name="ReadyScreen" type="Panel" parent="."]
+process_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -386.0
+offset_right = 832.0
+offset_bottom = 382.0
+grow_vertical = 2
+
+[node name="ReadyButton" type="Button" parent="ReadyScreen"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 640.0
+offset_bottom = 576.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 64
+text = "CLICK ME TO START"
+
+[node name="PausePanel" type="Panel" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -386.0
+offset_right = 832.0
+offset_bottom = 382.0
+grow_vertical = 2
+
+[node name="ScoreText" type="Label" parent="PausePanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 440.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 128
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restartbutton" type="Button" parent="PausePanel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 656.0
+offset_right = 256.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 64
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="PausePanel"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 656.0
+offset_right = 704.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 64
+text = "QUIT"
+
+[node name="UnpauseButton" type="Button" parent="PausePanel"]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 656.0
+offset_right = 480.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 64
+text = "UNPAUSE"
+
+[node name="ScorePanel" type="Panel" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -322.0
+offset_right = -64.0
+offset_bottom = 318.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ScoreText" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 172.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "SCORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreVal" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 16.0
+offset_right = 560.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HighText" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 172.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "BEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighVal" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 88.0
+offset_right = 560.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CountText" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 172.0
+offset_bottom = 232.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "CLEAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountVal" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 159.0
+offset_right = 560.0
+offset_bottom = 232.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LevelText" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 232.0
+offset_right = 172.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelVal" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 232.0
+offset_right = 560.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TimeText" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 304.0
+offset_right = 172.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "TIME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeVal" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 304.0
+offset_right = 560.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "00:00.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Next" type="Label" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 408.0
+offset_right = 168.0
+offset_bottom = 480.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 48
+text = "NEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 480.0
+offset_right = 328.0
+offset_bottom = 560.0
+color = Color(1, 0, 0, 0.196078)
+
+[node name="LittleGuy" parent="ScorePanel" instance=ExtResource("3_241lt")]
+position = Vector2(96, 520)
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+freeze = true
+contact_monitor = false
+
+[node name="LittleGuy2" parent="ScorePanel" instance=ExtResource("3_241lt")]
+position = Vector2(192, 520)
+scale = Vector2(0.75, 0.75)
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+freeze = true
+contact_monitor = false
+
+[node name="LittleGuy3" parent="ScorePanel" instance=ExtResource("3_241lt")]
+position = Vector2(288, 520)
+scale = Vector2(0.75, 0.75)
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+freeze = true
+contact_monitor = false
+
+[node name="LittleGuy4" parent="ScorePanel" instance=ExtResource("3_241lt")]
+position = Vector2(384, 520)
+scale = Vector2(0.75, 0.75)
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+freeze = true
+contact_monitor = false
+
+[node name="LittleGuy5" parent="ScorePanel" instance=ExtResource("3_241lt")]
+position = Vector2(480, 520)
+scale = Vector2(0.75, 0.75)
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+freeze = true
+contact_monitor = false
+
+[node name="TimeProg" type="ProgressBar" parent="ScorePanel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 576.0
+offset_right = 520.0
+offset_bottom = 624.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ScorePanel/TimeProg"]
+layout_mode = 0
+offset_right = 464.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_dbcpg")
+theme_override_font_sizes/font_size = 24
+text = "5.00s"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="GameOverPanel/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="GameOverPanel/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="button_down" from="ReadyScreen/ReadyButton" to="." method="_on_ready_button_button_down"]
+[connection signal="pressed" from="PausePanel/Restartbutton" to="." method="_on_restartbutton_pressed"]
+[connection signal="pressed" from="PausePanel/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PausePanel/UnpauseButton" to="." method="_on_unpause_button_pressed"]

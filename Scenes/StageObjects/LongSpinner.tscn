@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://7j7vdf6gr8gx"]
+
+[ext_resource type="Script" path="res://Scripts/Spinner.gd" id="1_ooa4r"]
+[ext_resource type="Texture2D" uid="uid://copoclqda618d" path="res://Sprites/StageParts/spinner_long.png" id="2_kxrp0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tvgt6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaq13"]
+size = Vector2(32, 512)
+
+[node name="SmallSpinner" type="AnimatableBody2D" groups=["stage_object"]]
+physics_material_override = SubResource("PhysicsMaterial_tvgt6")
+script = ExtResource("1_ooa4r")
+spinner_length = 1
+spin_speed = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kxrp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eaq13")

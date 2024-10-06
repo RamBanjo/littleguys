@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dna1l2fk1eha4"]
+
+[ext_resource type="Texture2D" uid="uid://dre8id1pyr516" path="res://Sprites/StageParts/steel_block.png" id="1_kw2oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of3d6"]
+size = Vector2(64, 64)
+
+[node name="SteelBlock" type="StaticBody2D" groups=["stage_object"]]
+texture_filter = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kw2oy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_of3d6")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kw2oy")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5

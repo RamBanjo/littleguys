@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce1r43384vwf5"]
+
+[ext_resource type="Texture2D" uid="uid://bi3sa41hsmtt2" path="res://Sprites/StageParts/moving_platform.png" id="1_q1ufq"]
+[ext_resource type="Script" path="res://Scripts/moving_platform.gd" id="1_vbdf0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pk7vr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5typ"]
+size = Vector2(128, 32)
+
+[node name="MovingPlatform" type="AnimatableBody2D" groups=["stage_object"]]
+physics_material_override = SubResource("PhysicsMaterial_pk7vr")
+script = ExtResource("1_vbdf0")
+movement_speed = 100.0
+acceptable_error = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q1ufq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n5typ")

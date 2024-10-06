@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://bg5dhnxglys6q"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_fc5vt"]
+[ext_resource type="PackedScene" uid="uid://cxaa0ei4vsvcf" path="res://Scenes/StageObjects/GuySpawner.tscn" id="2_2y5s0"]
+[ext_resource type="PackedScene" uid="uid://b10noqspuk4hb" path="res://Scenes/FullInterface.tscn" id="4_30bv8"]
+[ext_resource type="PackedScene" uid="uid://cjk0hu4amu4hb" path="res://Scenes/ParallaxBG.tscn" id="5_n34eo"]
+[ext_resource type="PackedScene" uid="uid://dqd86lqmevh3n" path="res://Scenes/main_bgm.tscn" id="6_x3i3a"]
+[ext_resource type="PackedScene" uid="uid://bdyj6ewjo5byt" path="res://Scenes/sfx_player.tscn" id="7_qvxpr"]
+[ext_resource type="PackedScene" uid="uid://dj5ogaqopqwth" path="res://Scenes/StageObjects/LongShaker.tscn" id="8_ncw6x"]
+[ext_resource type="PackedScene" uid="uid://cnrd6sd2shb7r" path="res://Scenes/StageObjects/LongSweeper.tscn" id="9_abrwd"]
+
+[node name="BasicContainer" type="Node2D" node_paths=PackedStringArray("guyspawner_list") groups=["Persist"]]
+script = ExtResource("1_fc5vt")
+map_name = "shake"
+guyspawner_list = [NodePath("GuySpawner2")]
+
+[node name="GuySpawner2" parent="." instance=ExtResource("2_2y5s0")]
+position = Vector2(448, 32)
+
+[node name="FullInterface" parent="." instance=ExtResource("4_30bv8")]
+
+[node name="AutoSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_n34eo")]
+
+[node name="MainBGM" parent="." instance=ExtResource("6_x3i3a")]
+
+[node name="SFXPlayer" parent="." instance=ExtResource("7_qvxpr")]
+
+[node name="MovingPlatform" parent="." instance=ExtResource("8_ncw6x")]
+position = Vector2(448, 712)
+up_movement = 32.0
+down_movement = 32.0
+movement_speed = 200.0
+terminal_delay = 0.0
+acceptable_error = 10.0
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("9_abrwd")]
+position = Vector2(176, 440)
+left_movement = 32.0
+right_movement = 32.0
+movement_speed = 200.0
+terminal_delay = 0.0
+
+[node name="MovingPlatform3" parent="." instance=ExtResource("9_abrwd")]
+position = Vector2(720, 440)
+left_movement = 32.0
+right_movement = 32.0
+movement_speed = 200.0
+current_direction = Vector2(-1, 0)
+terminal_delay = 0.0
+
+[connection signal="guy_spawned" from="GuySpawner2" to="." method="_on_guy_spawner_guy_spawned"]
+[connection signal="game_start" from="FullInterface" to="." method="_on_full_interface_game_start"]
+[connection signal="toggle_pause" from="FullInterface" to="." method="_on_full_interface_toggle_pause"]
+[connection signal="timeout" from="AutoSpawnTimer" to="." method="_on_timer_timeout"]

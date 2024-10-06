@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7o1e0ts7n1t"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_s8xlw"]
+[ext_resource type="PackedScene" uid="uid://cxaa0ei4vsvcf" path="res://Scenes/StageObjects/GuySpawner.tscn" id="2_q8gbv"]
+[ext_resource type="PackedScene" uid="uid://7br3n5i6gxdq" path="res://Scenes/StageObjects/TileMap.tscn" id="3_t4lo4"]
+[ext_resource type="PackedScene" uid="uid://b10noqspuk4hb" path="res://Scenes/FullInterface.tscn" id="4_ajmnt"]
+[ext_resource type="PackedScene" uid="uid://cjk0hu4amu4hb" path="res://Scenes/ParallaxBG.tscn" id="5_cixpe"]
+[ext_resource type="PackedScene" uid="uid://dqd86lqmevh3n" path="res://Scenes/main_bgm.tscn" id="6_mnsi1"]
+[ext_resource type="PackedScene" uid="uid://bdyj6ewjo5byt" path="res://Scenes/sfx_player.tscn" id="7_1b5xf"]
+[ext_resource type="PackedScene" uid="uid://7j7vdf6gr8gx" path="res://Scenes/StageObjects/LongSpinner.tscn" id="8_i6mo0"]
+
+[node name="BasicContainer" type="Node2D" node_paths=PackedStringArray("guyspawner_list") groups=["Persist"]]
+script = ExtResource("1_s8xlw")
+map_name = "blender"
+guyspawner_list = [NodePath("GuySpawner"), NodePath("GuySpawner2"), NodePath("GuySpawner3")]
+
+[node name="GuySpawner" parent="." instance=ExtResource("2_q8gbv")]
+position = Vector2(224, 32)
+
+[node name="GuySpawner2" parent="." instance=ExtResource("2_q8gbv")]
+position = Vector2(448, 32)
+
+[node name="GuySpawner3" parent="." instance=ExtResource("2_q8gbv")]
+position = Vector2(664, 32)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_t4lo4")]
+
+[node name="FullInterface" parent="." instance=ExtResource("4_ajmnt")]
+
+[node name="AutoSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_cixpe")]
+
+[node name="MainBGM" parent="." instance=ExtResource("6_mnsi1")]
+
+[node name="SFXPlayer" parent="." instance=ExtResource("7_1b5xf")]
+
+[node name="SmallSpinner" parent="." instance=ExtResource("8_i6mo0")]
+position = Vector2(320, 448)
+
+[node name="SmallSpinner2" parent="." instance=ExtResource("8_i6mo0")]
+position = Vector2(576, 448)
+spin_direction = 1
+
+[connection signal="guy_spawned" from="GuySpawner" to="." method="_on_guy_spawner_guy_spawned"]
+[connection signal="guy_spawned" from="GuySpawner2" to="." method="_on_guy_spawner_guy_spawned"]
+[connection signal="guy_spawned" from="GuySpawner3" to="." method="_on_guy_spawner_guy_spawned"]
+[connection signal="game_start" from="FullInterface" to="." method="_on_full_interface_game_start"]
+[connection signal="toggle_pause" from="FullInterface" to="." method="_on_full_interface_toggle_pause"]
+[connection signal="timeout" from="AutoSpawnTimer" to="." method="_on_timer_timeout"]

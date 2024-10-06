@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c32i375opwxt0"]
+
+[ext_resource type="Script" path="res://Scripts/Spinner.gd" id="1_oiotm"]
+[ext_resource type="Texture2D" uid="uid://jsfwjej2isng" path="res://Sprites/StageParts/spinner_bar.png" id="2_8h6fi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaq13"]
+size = Vector2(32, 128)
+
+[node name="SmallSpinner" type="AnimatableBody2D" groups=["stage_object"]]
+script = ExtResource("1_oiotm")
+spin_speed = 0.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8h6fi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eaq13")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdyj6ewjo5byt"]
+
+[ext_resource type="Script" path="res://Scripts/SFXPack.gd" id="1_2tyfo"]
+[ext_resource type="AudioStream" uid="uid://dlouj42y4ohqn" path="res://Audio/SFX/game_over.wav" id="2_g4tri"]
+[ext_resource type="AudioStream" uid="uid://bvd1bx1gg64mt" path="res://Audio/SFX/high_score.wav" id="3_u5im8"]
+[ext_resource type="AudioStream" uid="uid://b1iwentih0cx5" path="res://Audio/SFX/level_up.wav" id="4_5i4pb"]
+[ext_resource type="AudioStream" uid="uid://bjyi5e4s6bvld" path="res://Audio/SFX/pop.wav" id="5_htcxm"]
+[ext_resource type="AudioStream" uid="uid://dcs8rqemhy3s7" path="res://Audio/SFX/woo.wav" id="6_a1ffg"]
+[ext_resource type="AudioStream" uid="uid://0hutdl0jqtph" path="res://Audio/SFX/yay.wav" id="7_1n1fh"]
+[ext_resource type="AudioStream" uid="uid://bjcyyq5bhr10q" path="res://Audio/SFX/yippee.wav" id="8_bvqm8"]
+
+[node name="SFXPlayer" type="Node"]
+script = ExtResource("1_2tyfo")
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_g4tri")
+
+[node name="HighScoreSound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_u5im8")
+
+[node name="LevelUpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5i4pb")
+
+[node name="SpawnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_htcxm")
+
+[node name="ClearSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a1ffg")
+
+[node name="Tier2ClearSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_1n1fh")
+
+[node name="Tier3ClearSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bvqm8")

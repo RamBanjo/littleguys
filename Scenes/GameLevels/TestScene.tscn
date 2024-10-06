@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://cfodq83tvgcnn"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_87kpk"]
+[ext_resource type="PackedScene" uid="uid://cxaa0ei4vsvcf" path="res://Scenes/StageObjects/GuySpawner.tscn" id="2_7a2vf"]
+[ext_resource type="PackedScene" uid="uid://7br3n5i6gxdq" path="res://Scenes/StageObjects/TileMap.tscn" id="3_ptu1x"]
+[ext_resource type="PackedScene" uid="uid://b10noqspuk4hb" path="res://Scenes/FullInterface.tscn" id="4_gsivw"]
+[ext_resource type="PackedScene" uid="uid://cjk0hu4amu4hb" path="res://Scenes/ParallaxBG.tscn" id="5_64s1i"]
+[ext_resource type="PackedScene" uid="uid://dqd86lqmevh3n" path="res://Scenes/main_bgm.tscn" id="6_grbfl"]
+[ext_resource type="PackedScene" uid="uid://bdyj6ewjo5byt" path="res://Scenes/sfx_player.tscn" id="7_77m1t"]
+
+[node name="BasicContainer" type="Node2D" node_paths=PackedStringArray("guyspawner_list") groups=["Persist"]]
+script = ExtResource("1_87kpk")
+guyspawner_list = [NodePath("GuySpawner"), NodePath("GuySpawner2"), NodePath("GuySpawner3")]
+
+[node name="GuySpawner" parent="." instance=ExtResource("2_7a2vf")]
+position = Vector2(224, 32)
+
+[node name="GuySpawner2" parent="." instance=ExtResource("2_7a2vf")]
+position = Vector2(448, 32)
+
+[node name="GuySpawner3" parent="." instance=ExtResource("2_7a2vf")]
+position = Vector2(672, 32)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("3_ptu1x")]
+
+[node name="FullInterface" parent="." instance=ExtResource("4_gsivw")]
+
+[node name="AutoSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("5_64s1i")]
+
+[node name="MainBGM" parent="." instance=ExtResource("6_grbfl")]
+
+[node name="SFXPlayer" parent="." instance=ExtResource("7_77m1t")]
+
+[connection signal="guy_spawned" from="GuySpawner" to="." method="_on_guy_spawner_guy_spawned"]
+[connection signal="guy_spawned" from="GuySpawner2" to="." method="_on_guy_spawner_guy_spawned"]
+[connection signal="guy_spawned" from="GuySpawner3" to="." method="_on_guy_spawner_guy_spawned"]
+[connection signal="game_start" from="FullInterface" to="." method="_on_full_interface_game_start"]
+[connection signal="toggle_pause" from="FullInterface" to="." method="_on_full_interface_toggle_pause"]
+[connection signal="timeout" from="AutoSpawnTimer" to="." method="_on_timer_timeout"]

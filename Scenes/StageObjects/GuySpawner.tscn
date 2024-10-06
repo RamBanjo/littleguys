@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxaa0ei4vsvcf"]
+
+[ext_resource type="Texture2D" uid="uid://dhkainrs248fc" path="res://Sprites/StageParts/guy_pipeline.png" id="1_3uafp"]
+[ext_resource type="Script" path="res://Scripts/guy_spawner.gd" id="1_4wno5"]
+
+[node name="GuySpawner" type="StaticBody2D"]
+texture_filter = 3
+script = ExtResource("1_4wno5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3uafp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-29, -32, 29, -32, 29, 17, 32, 17, 32, 32, -32, 32, -32, 17, -29, 17)
+
+[node name="Spawnpoint" type="Node2D" parent="."]
+position = Vector2(0, 64)

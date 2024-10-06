@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjk0hu4amu4hb"]
+
+[ext_resource type="Script" path="res://Scripts/parallax_background.gd" id="1_40bfu"]
+[ext_resource type="Texture2D" uid="uid://bs0x6m7ysdlhl" path="res://Sprites/creatures_paralax.png" id="2_liwm2"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+process_mode = 3
+script = ExtResource("1_40bfu")
+x_scroll = 40.0
+y_scroll = 40.0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(256, 256)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(128, 128)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(128, 640)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(640, 128)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(640, 640)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1152, 128)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1152, 640)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1664, 128)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1664, 640)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D9" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(128, 1152)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D10" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(640, 1152)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D11" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1152, 1152)
+texture = ExtResource("2_liwm2")
+
+[node name="Sprite2D12" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1664, 1152)
+texture = ExtResource("2_liwm2")
