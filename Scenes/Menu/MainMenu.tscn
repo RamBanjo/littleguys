@@ -1105,7 +1105,7 @@ stage_preview_texture = ExtResource("29_dhkea")
 stage_id = "football"
 stage_scene_path = "res://Scenes/GameLevels/WaveScene.tscn"
 
-[node name="FootballPicker2" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
+[node name="BottomlessPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -1117,7 +1117,7 @@ grow_horizontal = 2
 stage_name = "Bottomless"
 stage_preview_texture = ExtResource("30_a8ubc")
 stage_id = "bottomless"
-stage_scene_path = "F:/Users/RamBanjo/Documents/matching-little-guys/Scenes/GameLevels/BottomlessScene.tscn"
+stage_scene_path = "res://Scenes/GameLevels/BottomlessScene.tscn"
 
 [node name="OptionsCanvas" type="CanvasLayer" parent="."]
 visible = false

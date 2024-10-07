@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Move Forward 90bpm Melody Only.mp3-690bc8db8a
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

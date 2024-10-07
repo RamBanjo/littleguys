@@ -33,6 +33,7 @@ static var preset_res = {
 func _ready() -> void:
 	initialize_settings()
 	bgm_object.play()
+	#bgm_object.autoplay = true
 	
 	#pass # Replace with function body.
 
