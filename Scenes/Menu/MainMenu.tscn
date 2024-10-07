@@ -1382,6 +1382,36 @@ text = "RamChops Games
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Heading7" type="Label" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 480.0
+offset_right = 192.0
+offset_bottom = 552.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heading9" type="Label" parent="CreditsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 160.0
+offset_right = 192.0
+offset_bottom = 232.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_nxc55")
+theme_override_font_sizes/font_size = 48
+text = "Font"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Heading5" type="Label" parent="CreditsCanvas"]
 anchors_preset = 5
 anchor_left = 0.5

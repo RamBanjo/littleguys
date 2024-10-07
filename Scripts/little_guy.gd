@@ -276,15 +276,17 @@ func is_linked_to_current_hovered_guy(exclusions = []):
 	if self == current_hovered_guy:
 		return true
 	
-	#Otherwise, get 
+	#Otherwise, get the list of LittleGuys that I'm colliding with
 	var list_of_guys = get_adjacent_guy_with_same_trait(hovering_group["part"])
 	
+	#Make sure to not check for things we specifically ask the function not to
 	for excluded_guy in exclusions:
 		list_of_guys.erase(excluded_guy)
 	
-	if current_hovered_guy not in list_of_guys:
-		return false
-	return true
+	#If we can't find the current hovered guy from here, then it is false. Likewise if we can, it's true.
+	return current_hovered_guy in list_of_guys
+		#return false
+	#return true
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:

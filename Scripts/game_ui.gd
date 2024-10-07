@@ -37,6 +37,7 @@ static var time_elapsed : float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	time_elapsed = 0
 	pass # Replace with function body.
 
 
