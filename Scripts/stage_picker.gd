@@ -15,9 +15,7 @@ func _ready() -> void:
 	stage_name_label.text = stage_name
 	stage_preview.texture = stage_preview_texture
 	
-	var hsdict = {"high": GameManager.load_high_score(stage_id)}
-	
-	high_score_label.text = "BEST: {high}".format(hsdict)
+	update_highscore_label()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -25,3 +23,7 @@ func _process(delta: float) -> void:
 	
 func _on_enter_button_pressed() -> void:
 	get_tree().change_scene_to_file(stage_scene_path)
+
+func update_highscore_label():
+	var hsdict = {"high": GameManager.load_high_score(stage_id)}
+	high_score_label.text = "BEST: {high}".format(hsdict)

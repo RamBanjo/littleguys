@@ -46,6 +46,13 @@ static var sprites_dict = {
 	LittleGuyBody.HEXAGON: $HexagonCollision
 }
 
+@onready var close_area_by_body_type = {
+	LittleGuyBody.CIRCLE: $Area2D/CircleCollision,
+	LittleGuyBody.TRIANGLE: $Area2D/TriangleCollision,
+	LittleGuyBody.SQUARE: $Area2D/SquareCollision,
+	LittleGuyBody.HEXAGON: $Area2D/HexagonCollision	
+}
+
 @onready var part_sprites = {
 	BodyParts.BODY : $LittleGuyBody,
 	BodyParts.EYES : $LittleGuyEyes,
@@ -53,8 +60,12 @@ static var sprites_dict = {
 }
 
 @onready var visibility_notif = $VisibleOnScreenNotifier2D
+@onready var chain_preview = $ChainPartPreview
 
 var my_collision
+var my_close_area
+
+@onready var my_area_2d = $Area2D
 
 #@export var my_body : LittleGuyBody
 #@export var my_eyes : LittleGuyEyes
@@ -92,7 +103,10 @@ func setup_collider():
 		my_collider.set_deferred("disabled", true)
 
 	my_collision = collision_by_body_type[my_parts[BodyParts.BODY]]
+	my_close_area = close_area_by_body_type[my_parts[BodyParts.BODY]]
+	
 	my_collision.set_deferred("disabled", false)
+	my_close_area.set_deferred("disabled", false)
 
 func update_part_graphics():
 	for part in BodyParts.values():
@@ -117,7 +131,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	
 	#When we left click the little guy...
 	if event is InputEventMouseButton:
-		if event.button_index == 1 and event.pressed == true:
+		if event.button_index == 1 and event.pressed == false:
 			
 			#...we'll send the signal to the GameManager with the value of the number of guys that will clear...
 			var clear_group = get_highest_count_group_with_adjacent_trait()
@@ -127,17 +141,43 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			#...then it will clear.
 			for little_guy in clear_group["little_guys"]:
 				#We also wake up anyone adjacent to someone who just got cleared.
-				for adjacent_guy in little_guy.get_colliding_bodies():
+				for adjacent_guy in little_guy.my_area_2d.get_overlapping_bodies():
 					if adjacent_guy is LittleGuy:
 						adjacent_guy.sleeping = false
 						
 				little_guy.queue_free()
 				
-			
-				
 			#We will get score according to the amount cleared. Send this to the GameManager.
 			
-
+func add_hover_effect():
+	
+	#Set the alpha of every body part to 0.5
+	self.set_alpha_on_sprites(0.5)
+	
+	#Figure out what body part is causing this chain,
+	var body_part = hovering_group["part"]
+	
+	#The body is already large so we will scale it down. If it's not a body, we hide the original and upscale it.
+	if body_part == BodyParts.BODY:
+		chain_preview.scale = Vector2(0.4, 0.4)
+	else:
+		#Hide the body part if it's not a body.
+		part_sprites[body_part].modulate.a = 0
+		chain_preview.scale = Vector2(0.75, 0.75)
+	
+	#If the body part causing this chain is a mouth, move it to where the mouth should be.
+	if body_part == BodyParts.MOUTH:
+		chain_preview.position = Vector2(0, 20)
+	else:
+		chain_preview.position = Vector2.ZERO
+	
+	#Change the chain preview texture to the proper sprite, then show.
+	chain_preview.texture = sprites_dict[body_part][my_parts[body_part]]
+	chain_preview.show()
+	
+func remove_hover_effect():
+	self.set_alpha_on_sprites(1)
+	chain_preview.hide()
 
 
 #Must force Exited to process BEFORE Entered
@@ -147,21 +187,21 @@ func _on_mouse_exited() -> void:
 
 func _on_mouse_entered() -> void:
 	
-	#To ensure that we always exit before entering, we make it delay a bit.
+	#To ensure that we calculate removal from hovered guys before the addition, we make it delay a bit.
 	await get_tree().create_timer(0.01).timeout
 	
+	clear_current_hovered_guys()
 	current_hovered_guy = self
 	hovering_group = get_highest_count_group_with_adjacent_trait()
 	for little_guy in hovering_group["little_guys"]:
-		little_guy.set_alpha_on_sprites(0.5)
-		
+		little_guy.add_hover_effect()
 		
 static func clear_current_hovered_guys():
 	current_hovered_guy = null
 	for little_guy in hovering_group["little_guys"]:
 		if little_guy != null:
-			little_guy.set_alpha_on_sprites(1)
-	
+			little_guy.remove_hover_effect()
+
 	hovering_group = HOVERING_DICT_DEFAULT.duplicate()			
 		
 func get_highest_count_group_with_adjacent_trait():
@@ -190,7 +230,7 @@ func get_adjacent_guy_with_same_trait(check_part : BodyParts, checked_guys_list 
 		return [self]
 	
 	#Get a list of all the things colliding with this rigidbody
-	var colliding_things = get_colliding_bodies()
+	var colliding_things = my_area_2d.get_overlapping_areas()
 	
 	var new_same_trait_guys_list = []
 	
@@ -198,8 +238,8 @@ func get_adjacent_guy_with_same_trait(check_part : BodyParts, checked_guys_list 
 	for thing in colliding_things:
 		
 		#If it's a LittleGuy and we haven't seen it yet...
-		if thing is LittleGuy and thing not in checked_guys_list:
-			var adjacent_guy = thing as LittleGuy
+		if thing.get_parent() is LittleGuy and thing.get_parent() not in checked_guys_list:
+			var adjacent_guy = thing.get_parent() as LittleGuy
 			
 			#Mark the thing as seen
 			checked_guys_list.append(adjacent_guy)
@@ -234,12 +274,15 @@ func get_adjacent_guy_with_same_trait(check_part : BodyParts, checked_guys_list 
 		return unique
 
 #If something else begins touching me...
-func _on_body_entered(body: Node) -> void:
+func _on_area_entered(area: Area2D) -> void:
+
+	#To ensure that we calculate removal from hovered guys before the addition, we make it delay a bit.
+	await get_tree().create_timer(0.01).timeout
 
 	#If I'm in the hovering group, and the other object is a Little Guy...
 	
-	if self in hovering_group["little_guys"] and body is LittleGuy:
-		var other_little_guy = body as LittleGuy
+	if self in hovering_group["little_guys"] and area.get_parent() is LittleGuy:
+		var other_little_guy = area.get_parent() as LittleGuy
 
 		#If the other guy isn't in the hovering group and the property we're checking for happens to match, it should be in the hovering group. Add it!
 		#print(other_little_guy not in hovering_group)
@@ -247,17 +290,17 @@ func _on_body_entered(body: Node) -> void:
 			
 			#We'll add the other guy to the hovering group! Yay! We also make it translucent
 			hovering_group["little_guys"].append(other_little_guy)
-			other_little_guy.set_alpha_on_sprites(0.5)
+			other_little_guy.add_hover_effect()
 
 
 #If something else stops touching me...
-func _on_body_exited(body: Node) -> void:
+func _on_area_exited(area: Area2D) -> void:
 	
 	self.sleeping = false
 	
 	#If the other guy is a LittleGuy that's not currently being hovered AND we are currently hovering something...
-	if body is LittleGuy and not hovering_group["little_guys"].is_empty() and body != current_hovered_guy:
-		var other_little_guy = body as LittleGuy
+	if area.get_parent() is LittleGuy and not hovering_group["little_guys"].is_empty() and area.get_parent() != current_hovered_guy:
+		var other_little_guy = area.get_parent() as LittleGuy
 		
 		#If I'm in the hovering_group or the other guy is also in the hovering_group
 		if self in hovering_group["little_guys"] or other_little_guy in hovering_group["little_guys"]:
@@ -265,10 +308,10 @@ func _on_body_exited(body: Node) -> void:
 			#We'll see if either of us can find our way back to the current_hovering_guy. Anyone that can't will be removed from the hovering_guys_list.	
 			if not self.is_linked_to_current_hovered_guy([self, other_little_guy]):
 				hovering_group["little_guys"].erase(self)
-				set_alpha_on_sprites(1)
+				remove_hover_effect()
 			if not other_little_guy.is_linked_to_current_hovered_guy([self, other_little_guy]):
 				hovering_group["little_guys"].erase(other_little_guy)
-				other_little_guy.set_alpha_on_sprites(1)
+				other_little_guy.remove_hover_effect()
 
 func is_linked_to_current_hovered_guy(exclusions = []):
 	
@@ -290,5 +333,6 @@ func is_linked_to_current_hovered_guy(exclusions = []):
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	#print(global_position)
 	queue_free()
 	guy_fell_off.emit()

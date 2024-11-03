@@ -1,0 +1,68 @@
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://cveftya373t7l"]
+
+[ext_resource type="FontFile" uid="uid://cc3qabhkm6lw4" path="res://Fonts/FifteenNarrow.ttf" id="1_sktyu"]
+[ext_resource type="StyleBox" uid="uid://neehm67wdjli" path="res://Themes/little_guy_button_disabled.tres" id="2_lvuho"]
+[ext_resource type="StyleBox" uid="uid://b33pigtrgorg4" path="res://Themes/little_guy_button_focused.tres" id="3_f0tyt"]
+[ext_resource type="StyleBox" uid="uid://cvvej63ytm78e" path="res://Themes/little_guy_button_hover.tres" id="4_ujdkm"]
+[ext_resource type="StyleBox" uid="uid://cltshs8tb83ge" path="res://Themes/little_guy_button_normal.tres" id="5_yxq27"]
+[ext_resource type="StyleBox" uid="uid://chlt3wupnrhyn" path="res://Themes/little_guy_button_pressed.tres" id="6_ujftn"]
+[ext_resource type="Texture2D" uid="uid://h8pd83jjgdr4" path="res://Sprites/little_guy_tiny.png" id="7_ftc8d"]
+[ext_resource type="Texture2D" uid="uid://dwfdd4yrx6omr" path="res://Sprites/little_guy_blep.png" id="8_oys5p"]
+[ext_resource type="StyleBox" uid="uid://bu08c6entra6" path="res://Themes/little_guy_bar_fill.tres" id="9_d0a0i"]
+[ext_resource type="StyleBox" uid="uid://bwunnmvediv2s" path="res://Themes/little_guy_bar_highlight.tres" id="10_c44v5"]
+[ext_resource type="StyleBox" uid="uid://cct6i6q80we7g" path="res://Themes/little_guy_bar_bg.tres" id="11_tmf1s"]
+[ext_resource type="StyleBox" uid="uid://cmvyt76io1pl7" path="res://Themes/little_guy_panels.tres" id="12_bnrqi"]
+[ext_resource type="StyleBox" uid="uid://baxobmn16nxkg" path="res://Themes/little_guy_bar_bg_2.tres" id="13_lupkq"]
+[ext_resource type="StyleBox" uid="uid://cg3m8wtamipay" path="res://Themes/little_guy_bar_fill_2.tres" id="14_h1goe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clffg"]
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_sktyu")
+Button/styles/disabled = ExtResource("2_lvuho")
+Button/styles/focus = ExtResource("3_f0tyt")
+Button/styles/hover = ExtResource("4_ujdkm")
+Button/styles/normal = ExtResource("5_yxq27")
+Button/styles/pressed = ExtResource("6_ujftn")
+HSlider/icons/grabber = ExtResource("7_ftc8d")
+HSlider/icons/grabber_highlight = ExtResource("8_oys5p")
+HSlider/styles/grabber_area = ExtResource("9_d0a0i")
+HSlider/styles/grabber_area_highlight = ExtResource("10_c44v5")
+HSlider/styles/slider = ExtResource("11_tmf1s")
+ItemList/fonts/font = ExtResource("1_sktyu")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_sktyu")
+Label/styles/normal = SubResource("StyleBoxEmpty_clffg")
+Panel/styles/panel = ExtResource("12_bnrqi")
+PopupMenu/fonts/font = ExtResource("1_sktyu")
+PopupMenu/styles/panel = ExtResource("11_tmf1s")
+ProgressBar/fonts/font = ExtResource("1_sktyu")
+ProgressBar/styles/background = ExtResource("13_lupkq")
+ProgressBar/styles/fill = ExtResource("14_h1goe")
+RichTextLabel/fonts/normal_font = ExtResource("1_sktyu")

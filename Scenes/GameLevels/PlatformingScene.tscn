@@ -30,6 +30,7 @@ tile_map_data = PackedByteArray("AAAIADAAAAAAAAAAAAAIADEAAAAAAAEAAAAIADIAAAAAAAE
 [node name="FullInterface" parent="." instance=ExtResource("4_mqi5b")]
 
 [node name="AutoSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_wagwq")]
@@ -38,28 +39,13 @@ autostart = true
 
 [node name="SFXPlayer" parent="." instance=ExtResource("7_tksfx")]
 
-[node name="MovingPlatform" parent="." instance=ExtResource("8_ry2wu")]
-position = Vector2(200, 168)
-left_movement = 0.0
-right_movement = 496.0
-terminal_delay = 0.0
-acceptable_error = 4.0
-
 [node name="MovingPlatform3" parent="." instance=ExtResource("8_ry2wu")]
 position = Vector2(200, 232)
 left_movement = 0.0
 right_movement = 496.0
-movement_speed = 200.0
-terminal_delay = 0.0
-acceptable_error = 8.0
-
-[node name="MovingPlatform4" parent="." instance=ExtResource("8_ry2wu")]
-position = Vector2(200, 296)
-left_movement = 0.0
-right_movement = 496.0
 movement_speed = 300.0
 terminal_delay = 0.0
-acceptable_error = 12.0
+acceptable_error = 8.0
 
 [node name="MovingPlatform5" parent="." instance=ExtResource("8_ry2wu")]
 position = Vector2(200, 360)

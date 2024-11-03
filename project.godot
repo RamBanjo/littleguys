@@ -36,4 +36,4 @@ debug_spawn_guy={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0, 0.131754, 0.259125, 1)
+environment/defaults/default_clear_color=Color(0.682353, 0.933333, 1, 1)

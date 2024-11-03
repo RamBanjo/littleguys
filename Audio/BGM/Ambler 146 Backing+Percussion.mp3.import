@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c13p55oh8e4cn"
+path="res://.godot/imported/Ambler 146 Backing+Percussion.mp3-dc1e62af95f2dd60d30bdeb4ca7bc25c.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGM/Ambler 146 Backing+Percussion.mp3"
+dest_files=["res://.godot/imported/Ambler 146 Backing+Percussion.mp3-dc1e62af95f2dd60d30bdeb4ca7bc25c.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

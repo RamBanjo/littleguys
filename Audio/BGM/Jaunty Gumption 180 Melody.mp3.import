@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqkxp3l06kw5q"
+path="res://.godot/imported/Jaunty Gumption 180 Melody.mp3-902d2307583e56e2940cb3513b49b575.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGM/Jaunty Gumption 180 Melody.mp3"
+dest_files=["res://.godot/imported/Jaunty Gumption 180 Melody.mp3-902d2307583e56e2940cb3513b49b575.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -29,6 +29,7 @@ tile_map_data = PackedByteArray("AAAIADAAAAAAAAAAAAAIADEAAAAAAAEAAAAIADIAAAAAAAE
 [node name="FullInterface" parent="." instance=ExtResource("4_o4quh")]
 
 [node name="AutoSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_b872f")]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://c0rensp4qvsvk"]
+[gd_scene load_steps=49 format=3 uid="uid://c0rensp4qvsvk"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_b5e7l"]
 [ext_resource type="PackedScene" uid="uid://cjk0hu4amu4hb" path="res://Scenes/ParallaxBG.tscn" id="1_g22sh"]
-[ext_resource type="FontFile" uid="uid://cc3qabhkm6lw4" path="res://Fonts/FifteenNarrow.ttf" id="2_nxc55"]
+[ext_resource type="Theme" uid="uid://cyij5s8lhrrvn" path="res://Themes/little_guy_theme.tres" id="3_0a864"]
 [ext_resource type="PackedScene" uid="uid://cxaa0ei4vsvcf" path="res://Scenes/StageObjects/GuySpawner.tscn" id="3_7ymsu"]
 [ext_resource type="Texture2D" uid="uid://b8vojl81ldxg5" path="res://Sprites/little_guys_logo.png" id="4_dsyk7"]
 [ext_resource type="Texture2D" uid="uid://dasp54l6u0e2k" path="res://Sprites/CreatureBody/hexagon_body.png" id="5_5sjp1"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b1mcegbs2q4eg" path="res://Sprites/CreatureMouth/stache_mouth.png" id="13_lfqxb"]
 [ext_resource type="Texture2D" uid="uid://dhkainrs248fc" path="res://Sprites/StageParts/guy_pipeline.png" id="17_65wi4"]
 [ext_resource type="Texture2D" uid="uid://b677uoslck887" path="res://Sprites/Screenshots/tutorial_hud.png" id="18_61dop"]
-[ext_resource type="PackedScene" uid="uid://ckny1qfrmcpm7" path="res://Scenes/StageObjects/StagePicker.tscn" id="20_h7lk6"]
+[ext_resource type="PackedScene" uid="uid://ckny1qfrmcpm7" path="res://Scenes/Menu/StagePicker.tscn" id="20_h7lk6"]
 [ext_resource type="Texture2D" uid="uid://h8pd83jjgdr4" path="res://Sprites/little_guy_tiny.png" id="20_i2cxt"]
 [ext_resource type="PackedScene" uid="uid://bk250r1huib6d" path="res://Scenes/StageObjects/Seesaw.tscn" id="20_p2ug4"]
 [ext_resource type="Texture2D" uid="uid://bys166oekr06o" path="res://Sprites/Screenshots/level_preview_basic.png" id="21_5slgu"]
@@ -28,60 +28,32 @@
 [ext_resource type="Texture2D" uid="uid://d17pin8eimhu7" path="res://Sprites/ramchops_transparent.png" id="22_1d4fd"]
 [ext_resource type="PackedScene" uid="uid://tub3gd2n1d1n" path="res://Scenes/StageObjects/LongMovingPlatform.tscn" id="22_11gbd"]
 [ext_resource type="Texture2D" uid="uid://26kdrapvwjfe" path="res://Sprites/Screenshots/level_preview_hourglass.png" id="22_sx8g6"]
-[ext_resource type="Texture2D" uid="uid://c0qcjtbyppnb8" path="res://Sprites/Screenshots/level_preview_cement_mixer.png" id="23_6o72k"]
 [ext_resource type="PackedScene" uid="uid://dev4xxofnuqrk" path="res://Scenes/StageObjects/Sweeper.tscn" id="23_42h1c"]
 [ext_resource type="Texture2D" uid="uid://cxhdllh04qixr" path="res://Sprites/Screenshots/level_preview_pachinko.png" id="23_sdt4t"]
 [ext_resource type="Texture2D" uid="uid://dy5qgarpulfgl" path="res://icon.svg" id="23_sybpb"]
 [ext_resource type="PackedScene" uid="uid://bdyj6ewjo5byt" path="res://Scenes/sfx_player.tscn" id="24_pgekk"]
+[ext_resource type="Texture2D" uid="uid://2tsp0yrgy4xr" path="res://Sprites/Screenshots/level_preview_spinner.png" id="24_yey7u"]
 [ext_resource type="Texture2D" uid="uid://br3ios6y8dak2" path="res://Sprites/Screenshots/level_preview_blender.png" id="25_nk4kt"]
 [ext_resource type="AudioStream" uid="uid://d1msk5iookcgi" path="res://Audio/BGM/Jaunty Gumption 146 FULL MIX.mp3" id="25_nsnrd"]
 [ext_resource type="Texture2D" uid="uid://claltoh1p36t5" path="res://Sprites/Screenshots/level_preview_polyrhythm.png" id="25_t186u"]
 [ext_resource type="Texture2D" uid="uid://diqrslpq2t410" path="res://Sprites/Screenshots/level_preview_osha.png" id="27_pnbu2"]
 [ext_resource type="Texture2D" uid="uid://cfjgnbliuck1n" path="res://Sprites/Screenshots/level_preview_shaker.png" id="28_t54ba"]
-[ext_resource type="Texture2D" uid="uid://bvt7ho3nhbi2w" path="res://Sprites/Screenshots/level_preview_football.png" id="29_dhkea"]
+[ext_resource type="Texture2D" uid="uid://30utbdvxjkpu" path="res://Sprites/Screenshots/level_preview_downhill.png" id="29_mtrio"]
 [ext_resource type="Texture2D" uid="uid://dyd1h4nx8hdib" path="res://Sprites/Screenshots/level_preview_bottomless.png" id="30_a8ubc"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo83n"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 4.0
-expand_margin_top = 20.0
-expand_margin_right = 4.0
-expand_margin_bottom = 20.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwdnk"]
-bg_color = Color(0, 0.541176, 0.67451, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 15.0
-expand_margin_bottom = 15.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b15eb"]
-bg_color = Color(0, 0.8, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_top = 15.0
-expand_margin_bottom = 15.0
+[ext_resource type="AudioStream" uid="uid://bndeek6jixjju" path="res://Audio/SFX/are_you_sure.wav" id="31_tb1fh"]
+[ext_resource type="AudioStream" uid="uid://buiycvy1b8cp7" path="res://Audio/SFX/chill.wav" id="32_sijeh"]
+[ext_resource type="StyleBox" uid="uid://cct6i6q80we7g" path="res://Themes/little_guy_bar_bg.tres" id="33_312gb"]
+[ext_resource type="AudioStream" uid="uid://d1q6ybon6qilr" path="res://Audio/SFX/strategic.wav" id="33_868k8"]
+[ext_resource type="StyleBox" uid="uid://bu08c6entra6" path="res://Themes/little_guy_bar_fill.tres" id="34_1xywb"]
+[ext_resource type="AudioStream" uid="uid://daw7u12vmoei1" path="res://Audio/SFX/time_attack.wav" id="34_sundd"]
+[ext_resource type="StyleBox" uid="uid://bwunnmvediv2s" path="res://Themes/little_guy_bar_highlight.tres" id="35_qj7ui"]
+[ext_resource type="Theme" uid="uid://cveftya373t7l" path="res://Themes/little_guy_theme_pixelfont.tres" id="40_hne7v"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_b5e7l")
 
 [node name="AutoSpawnTimer" type="Timer" parent="."]
 autostart = true
-
-[node name="ParallaxBackground" parent="." instance=ExtResource("1_g22sh")]
 
 [node name="MainMenuCanvas" type="CanvasLayer" parent="."]
 
@@ -94,6 +66,7 @@ offset_top = -386.0
 offset_right = 832.0
 offset_bottom = 382.0
 grow_vertical = 2
+theme = ExtResource("3_0a864")
 
 [node name="Label" type="Label" parent="MainMenuCanvas"]
 anchors_preset = 4
@@ -104,8 +77,8 @@ offset_top = 316.0
 offset_right = 832.0
 offset_bottom = 382.0
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
-theme_override_font_sizes/font_size = 48
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 42
 text = "Ludum Dare 56 - Tiny Creatures"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -115,8 +88,8 @@ offset_left = 128.0
 offset_top = 360.0
 offset_right = 768.0
 offset_bottom = 472.0
-theme_override_fonts/font = ExtResource("2_nxc55")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 56
 text = "PLAY"
 
 [node name="TutorialButton" type="Button" parent="MainMenuCanvas"]
@@ -124,8 +97,8 @@ offset_left = 128.0
 offset_top = 488.0
 offset_right = 416.0
 offset_bottom = 600.0
-theme_override_fonts/font = ExtResource("2_nxc55")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 56
 text = "TUTORIAL"
 
 [node name="OptionsButton" type="Button" parent="MainMenuCanvas"]
@@ -133,8 +106,8 @@ offset_left = 480.0
 offset_top = 488.0
 offset_right = 768.0
 offset_bottom = 600.0
-theme_override_fonts/font = ExtResource("2_nxc55")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 56
 text = "OPTIONS"
 
 [node name="CreditsButton" type="Button" parent="MainMenuCanvas"]
@@ -142,8 +115,8 @@ offset_left = 128.0
 offset_top = 616.0
 offset_right = 416.0
 offset_bottom = 728.0
-theme_override_fonts/font = ExtResource("2_nxc55")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 56
 text = "CREDITS"
 
 [node name="CreditsButton2" type="Button" parent="MainMenuCanvas"]
@@ -152,7 +125,7 @@ offset_left = 128.0
 offset_top = 616.0
 offset_right = 768.0
 offset_bottom = 728.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 64
 text = "CREDITS"
 
@@ -161,8 +134,8 @@ offset_left = 480.0
 offset_top = 616.0
 offset_right = 768.0
 offset_bottom = 728.0
-theme_override_fonts/font = ExtResource("2_nxc55")
-theme_override_font_sizes/font_size = 64
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 56
 text = "QUIT"
 
 [node name="TextureRect" type="TextureRect" parent="MainMenuCanvas"]
@@ -176,6 +149,8 @@ texture = ExtResource("4_dsyk7")
 [node name="GuySpawner" parent="." groups=["stage_object"] instance=ExtResource("3_7ymsu")]
 position = Vector2(1216, 32)
 
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_g22sh")]
+
 [node name="TutorialCanvas" type="CanvasLayer" parent="."]
 visible = false
 
@@ -188,6 +163,7 @@ offset_top = 64.0
 offset_right = 736.0
 offset_bottom = 832.0
 grow_horizontal = 2
+theme = ExtResource("3_0a864")
 
 [node name="Heading" type="Label" parent="TutorialCanvas"]
 anchors_preset = 5
@@ -198,7 +174,7 @@ offset_top = 64.0
 offset_right = 384.0
 offset_bottom = 192.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 72
 text = "How to Play"
 horizontal_alignment = 1
@@ -210,9 +186,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -600.0
+offset_left = -592.0
 offset_top = -258.0
-offset_right = -472.0
+offset_right = -464.0
 offset_bottom = -130.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -254,9 +230,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -512.0
+offset_left = -504.0
 offset_top = -218.0
-offset_right = -384.0
+offset_right = -376.0
 offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -298,9 +274,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -640.0
+offset_left = -632.0
 offset_top = -186.0
-offset_right = -512.0
+offset_right = -504.0
 offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -342,9 +318,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -552.0
+offset_left = -544.0
 offset_top = -154.0
-offset_right = -424.0
+offset_right = -416.0
 offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -386,10 +362,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -208.0
-offset_top = -162.0
-offset_right = -80.0
-offset_bottom = -34.0
+offset_left = -232.0
+offset_top = -154.0
+offset_right = -104.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -431,10 +407,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -218.0
-offset_right = -72.0
-offset_bottom = -90.0
+offset_left = -224.0
+offset_top = -210.0
+offset_right = -96.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -476,10 +452,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.0
-offset_top = -274.0
-offset_right = -88.0
-offset_bottom = -146.0
+offset_left = -240.0
+offset_top = -266.0
+offset_right = -112.0
+offset_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -521,10 +497,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -162.0
-offset_right = 48.0
-offset_bottom = -34.0
+offset_left = -104.0
+offset_top = -154.0
+offset_right = 24.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -566,10 +542,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -72.0
-offset_top = -218.0
-offset_right = 56.0
-offset_bottom = -90.0
+offset_left = -96.0
+offset_top = -210.0
+offset_right = 32.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -611,10 +587,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -274.0
-offset_right = 48.0
-offset_bottom = -146.0
+offset_left = -104.0
+offset_top = -266.0
+offset_right = 24.0
+offset_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -656,10 +632,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 64.0
-offset_top = -162.0
-offset_right = 192.0
-offset_bottom = -34.0
+offset_left = 40.0
+offset_top = -154.0
+offset_right = 168.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -701,10 +677,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 48.0
-offset_top = -218.0
-offset_right = 176.0
-offset_bottom = -90.0
+offset_left = 24.0
+offset_top = -210.0
+offset_right = 152.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -746,10 +722,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 72.0
-offset_top = -274.0
-offset_right = 200.0
-offset_bottom = -146.0
+offset_left = 48.0
+offset_top = -266.0
+offset_right = 176.0
+offset_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
@@ -786,9 +762,9 @@ grow_vertical = 0
 texture = ExtResource("7_fllr3")
 
 [node name="TextureRect" type="TextureRect" parent="TutorialCanvas"]
-offset_left = 1208.0
+offset_left = 1200.0
 offset_top = 192.0
-offset_right = 1272.0
+offset_right = 1264.0
 offset_bottom = 256.0
 texture = ExtResource("17_65wi4")
 
@@ -796,32 +772,30 @@ texture = ExtResource("17_65wi4")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -696.0
-offset_top = 520.0
-offset_right = -296.0
-offset_bottom = 769.0
+offset_left = -672.0
+offset_top = 472.0
+offset_right = -352.0
+offset_bottom = 793.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 28
-text = "These are Little Guys!
-They are strange creatures that
-like being tossed around.
+text = "These are Little Guys! They are strange creatures that like being tossed around.
 
-Don't let them fall off the screen or
-it's Game Over!"
+Don't let them fall off the screen or it's Game Over!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="TutorialCanvas"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -232.0
-offset_top = 352.0
+offset_left = -288.0
+offset_top = 376.0
 offset_right = 160.0
-offset_bottom = 769.0
+offset_bottom = 793.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 28
 text = "Your goal is to collect as many
 Little Guys as possible.
@@ -829,23 +803,23 @@ Little Guys as possible.
 When you click on a Little Guy,
 you collect them. You can collect 
 more in one click if the Little Guy
-shares traits with their neighbors!
+shares traits with other nearby Little Guys!
 
-Clicking on Little Guys drops 3 more
-into the field!"
+Clicking on Little Guys will drop more onto the field!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="TutorialCanvas"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 184.0
-offset_top = 336.0
+offset_top = 344.0
 offset_right = 696.0
-offset_bottom = 768.0
+offset_bottom = 776.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 28
 text = "This is a pipeline. 
 Little Guys will appear here!
@@ -855,17 +829,64 @@ the new Little Guy will pick one at random.
 If it's not fast enough for you, press SPACE BAR
 to make it quickly push Little Guys out!
 
-The pipes will get faster the more Little Guys
-you clear. Be careful of overflow!"
+The pipes will get stronger the more Little Guys you clear. Be careful of overflow!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="TutorialCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = 368.0
+offset_right = -128.0
+offset_bottom = 396.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 16
+text = "(Body Shape)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="TutorialCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 368.0
+offset_bottom = 396.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 16
+text = "(Eye Shape)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="TutorialCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 8.0
+offset_top = 368.0
+offset_right = 136.0
+offset_bottom = 396.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 16
+text = "(Mouth Shape)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="CloseTutorialButton" type="Button" parent="TutorialCanvas"]
 offset_left = 1408.0
 offset_top = 112.0
 offset_right = 1488.0
 offset_bottom = 192.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "x"
 
@@ -874,7 +895,7 @@ offset_left = 1088.0
 offset_top = 760.0
 offset_right = 1408.0
 offset_bottom = 816.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 32
 text = "NEXT"
 
@@ -890,22 +911,32 @@ offset_top = 64.0
 offset_right = 736.0
 offset_bottom = 832.0
 grow_horizontal = 2
+theme = ExtResource("3_0a864")
 
 [node name="CloseTutorialButton2" type="Button" parent="TutorialCanvas2"]
 offset_left = 1408.0
 offset_top = 112.0
 offset_right = 1488.0
 offset_bottom = 192.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "x"
+
+[node name="TutorialNext2Button" type="Button" parent="TutorialCanvas2"]
+offset_left = 1088.0
+offset_top = 760.0
+offset_right = 1408.0
+offset_bottom = 816.0
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 32
+text = "NEXT"
 
 [node name="TutorialBackButton" type="Button" parent="TutorialCanvas2"]
 offset_left = 192.0
 offset_top = 760.0
 offset_right = 512.0
 offset_bottom = 816.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 32
 text = "BACK"
 
@@ -918,7 +949,7 @@ offset_top = 64.0
 offset_right = 384.0
 offset_bottom = 192.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 72
 text = "How to Play"
 horizontal_alignment = 1
@@ -933,27 +964,101 @@ offset_top = 192.0
 offset_right = 673.0
 offset_bottom = 704.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 28
 text = "This is the statistics panel. You can learn more about your current run here!
 
 SCORE - Your score. Bigger groups of Little Guys are worth more!
 BEST - Your highest score ever on this board.
 CLEAR - How many Little Guys you have collected this run.
-LEVEL - You gain level by collecting Little Guys. The higher this is,
-the faster the pipeline will be.
+LEVEL - You gain level by collecting Little Guys. The higher this is, the stronger the pipeline will be.
 TIME - Time elapsed since the start of the game.
-NEXT - Preview of the Little Guys that will spawn next."
+NEXT - Preview of the Little Guys that will spawn next. The Little Guys that will spawn from clicking are highlighted in red.
+
+The timer bar shows the time until the next Little Guy gets dropped from the pipe."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TutorialCanvas2"]
+offset_left = 152.0
+offset_top = 208.0
+offset_right = 552.0
+offset_bottom = 702.0
+texture = ExtResource("18_61dop")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TutorialCanvas3" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="TutorialCanvas3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -736.0
+offset_top = 64.0
+offset_right = 736.0
+offset_bottom = 832.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+
+[node name="CloseTutorialButton3" type="Button" parent="TutorialCanvas3"]
+offset_left = 1408.0
+offset_top = 112.0
+offset_right = 1488.0
+offset_bottom = 192.0
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 48
+text = "x"
+
+[node name="TutorialBack2Button" type="Button" parent="TutorialCanvas3"]
+offset_left = 192.0
+offset_top = 760.0
+offset_right = 512.0
+offset_bottom = 816.0
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 32
+text = "BACK"
+
+[node name="Heading2" type="Label" parent="TutorialCanvas3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -384.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 72
+text = "How to Play"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="TutorialCanvas2"]
-offset_left = 128.0
-offset_top = 200.0
-offset_right = 576.0
-offset_bottom = 698.0
-texture = ExtResource("18_61dop")
-expand_mode = 1
+[node name="Label3" type="Label" parent="TutorialCanvas3"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -416.0
+offset_top = 192.0
+offset_right = 417.0
+offset_bottom = 704.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 28
+text = "There are four game modes you can choose from.
+
+Time Attack: Clicking will always drop 2 Little Guys, but each level you gain will make the timer bar go faster.
+
+Strategic: The pipeline will not automatically drop Little Guys, but every 3 levels you gain will increase the number of Little Guys dropped per click by 1.
+
+Chill: Difficulty will not scale with level increase.
+
+Cruel: Combines the chaotic pace of the automatic pipe from Time Attack mode with the slow but fatal click scaling from Strategic mode. How long will you last?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="LevelPickerCanvas" type="CanvasLayer" parent="."]
 visible = false
@@ -967,6 +1072,7 @@ offset_top = 64.0
 offset_right = 736.0
 offset_bottom = 832.0
 grow_horizontal = 2
+theme = ExtResource("3_0a864")
 metadata/_edit_use_anchors_ = true
 
 [node name="CloseLevelPickerButton" type="Button" parent="LevelPickerCanvas"]
@@ -974,7 +1080,7 @@ offset_left = 1408.0
 offset_top = 112.0
 offset_right = 1488.0
 offset_bottom = 192.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "x"
 metadata/_edit_use_anchors_ = true
@@ -997,9 +1103,9 @@ stage_scene_path = "res://Scenes/GameLevels/TestScene.tscn"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -416.0
+offset_left = -448.0
 offset_top = 88.0
-offset_right = -224.0
+offset_right = -256.0
 offset_bottom = 440.0
 grow_horizontal = 2
 stage_name = "Hourglass"
@@ -1011,9 +1117,9 @@ stage_scene_path = "res://Scenes/GameLevels/HourglassScene.tscn"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -160.0
+offset_left = -224.0
 offset_top = 88.0
-offset_right = 32.0
+offset_right = -32.0
 offset_bottom = 440.0
 grow_horizontal = 2
 stage_name = "Pachinko"
@@ -1025,13 +1131,11 @@ stage_scene_path = "res://Scenes/GameLevels/PachinkoScene.tscn"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 96.0
 offset_top = 88.0
-offset_right = 288.0
 offset_bottom = 440.0
 grow_horizontal = 2
 stage_name = "Spinner"
-stage_preview_texture = ExtResource("23_6o72k")
+stage_preview_texture = ExtResource("24_yey7u")
 stage_id = "spinner"
 stage_scene_path = "res://Scenes/GameLevels/SpinnerScene.tscn"
 
@@ -1039,9 +1143,9 @@ stage_scene_path = "res://Scenes/GameLevels/SpinnerScene.tscn"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 352.0
+offset_left = 232.0
 offset_top = 88.0
-offset_right = 544.0
+offset_right = 424.0
 offset_bottom = 440.0
 grow_horizontal = 2
 stage_name = "Blender"
@@ -1067,9 +1171,9 @@ stage_scene_path = "res://Scenes/GameLevels/PlatformingScene.tscn"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -416.0
+offset_left = -448.0
 offset_top = 456.0
-offset_right = -224.0
+offset_right = -256.0
 offset_bottom = 808.0
 grow_horizontal = 2
 stage_name = "No OSHA"
@@ -1081,9 +1185,9 @@ stage_scene_path = "res://Scenes/GameLevels/NoOSHA.tscn"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -160.0
+offset_left = -224.0
 offset_top = 456.0
-offset_right = 32.0
+offset_right = -32.0
 offset_bottom = 808.0
 grow_horizontal = 2
 stage_name = "Earthquake"
@@ -1095,29 +1199,73 @@ stage_scene_path = "res://Scenes/GameLevels/ShakeWell.tscn"
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 96.0
 offset_top = 456.0
-offset_right = 288.0
 offset_bottom = 808.0
 grow_horizontal = 2
-stage_name = "Football"
-stage_preview_texture = ExtResource("29_dhkea")
-stage_id = "football"
-stage_scene_path = "res://Scenes/GameLevels/WaveScene.tscn"
+stage_name = "Downhill"
+stage_preview_texture = ExtResource("29_mtrio")
+stage_id = "downhill"
+stage_scene_path = "res://Scenes/GameLevels/DownhillScene.tscn"
 
 [node name="BottomlessPicker" parent="LevelPickerCanvas" instance=ExtResource("20_h7lk6")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 352.0
+offset_left = 232.0
 offset_top = 456.0
-offset_right = 544.0
+offset_right = 424.0
 offset_bottom = 808.0
 grow_horizontal = 2
 stage_name = "Bottomless"
 stage_preview_texture = ExtResource("30_a8ubc")
 stage_id = "bottomless"
 stage_scene_path = "res://Scenes/GameLevels/BottomlessScene.tscn"
+
+[node name="OptionButton" type="OptionButton" parent="LevelPickerCanvas"]
+offset_left = 1264.0
+offset_top = 456.0
+offset_right = 1504.0
+offset_bottom = 519.0
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 32
+selected = 0
+item_count = 4
+popup/item_0/text = " Time Attack"
+popup/item_1/text = " Strategic"
+popup/item_1/id = 1
+popup/item_2/text = " Chill"
+popup/item_2/id = 2
+popup/item_3/text = " Cruel"
+popup/item_3/id = 3
+
+[node name="GameModeChooserSFX" type="Node" parent="LevelPickerCanvas/OptionButton"]
+
+[node name="AreYouSure" type="AudioStreamPlayer" parent="LevelPickerCanvas/OptionButton/GameModeChooserSFX"]
+stream = ExtResource("31_tb1fh")
+
+[node name="Chill" type="AudioStreamPlayer" parent="LevelPickerCanvas/OptionButton/GameModeChooserSFX"]
+stream = ExtResource("32_sijeh")
+
+[node name="Strategic" type="AudioStreamPlayer" parent="LevelPickerCanvas/OptionButton/GameModeChooserSFX"]
+stream = ExtResource("33_868k8")
+
+[node name="TimeAttack" type="AudioStreamPlayer" parent="LevelPickerCanvas/OptionButton/GameModeChooserSFX"]
+stream = ExtResource("34_sundd")
+
+[node name="BGMLabel" type="Label" parent="LevelPickerCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 448.0
+offset_top = 352.0
+offset_right = 720.0
+offset_bottom = 432.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 48
+text = "Game Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="OptionsCanvas" type="CanvasLayer" parent="."]
 visible = false
@@ -1131,6 +1279,7 @@ offset_top = 64.0
 offset_right = 736.0
 offset_bottom = 832.0
 grow_horizontal = 2
+theme = ExtResource("3_0a864")
 metadata/_edit_use_anchors_ = true
 
 [node name="CloseOptionsButton" type="Button" parent="OptionsCanvas"]
@@ -1138,10 +1287,9 @@ offset_left = 1408.0
 offset_top = 112.0
 offset_right = 1488.0
 offset_bottom = 192.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "x"
-metadata/_edit_use_anchors_ = true
 
 [node name="Heading" type="Label" parent="OptionsCanvas"]
 anchors_preset = 5
@@ -1152,7 +1300,7 @@ offset_top = 64.0
 offset_right = 384.0
 offset_bottom = 192.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 72
 text = "Options"
 horizontal_alignment = 1
@@ -1167,7 +1315,7 @@ offset_top = 248.0
 offset_right = -544.0
 offset_bottom = 328.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "BGM"
 horizontal_alignment = 1
@@ -1182,11 +1330,7 @@ offset_top = 256.0
 offset_right = 32.0
 offset_bottom = 320.0
 grow_horizontal = 2
-theme_override_icons/grabber = ExtResource("20_i2cxt")
-theme_override_icons/grabber_highlight = ExtResource("21_nbqqu")
-theme_override_styles/slider = SubResource("StyleBoxFlat_uo83n")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_nwdnk")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_b15eb")
+theme = ExtResource("3_0a864")
 step = 0.0
 value = 100.0
 tick_count = 10
@@ -1201,7 +1345,7 @@ offset_top = 376.0
 offset_right = -544.0
 offset_bottom = 456.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "SFX"
 horizontal_alignment = 1
@@ -1218,9 +1362,9 @@ offset_bottom = 448.0
 grow_horizontal = 2
 theme_override_icons/grabber = ExtResource("20_i2cxt")
 theme_override_icons/grabber_highlight = ExtResource("21_nbqqu")
-theme_override_styles/slider = SubResource("StyleBoxFlat_uo83n")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_nwdnk")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_b15eb")
+theme_override_styles/slider = ExtResource("33_312gb")
+theme_override_styles/grabber_area = ExtResource("34_1xywb")
+theme_override_styles/grabber_area_highlight = ExtResource("35_qj7ui")
 step = 0.0
 value = 100.0
 tick_count = 10
@@ -1230,25 +1374,56 @@ ticks_on_borders = true
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -352.0
+offset_left = -416.0
 offset_top = 480.0
 offset_right = -96.0
 offset_bottom = 560.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "Resolution"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GameBGLabel" type="Label" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 144.0
+offset_top = 192.0
+offset_right = 560.0
+offset_bottom = 272.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 48
+text = "Game Background"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FontLabel" type="Label" parent="OptionsCanvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 144.0
+offset_top = 384.0
+offset_right = 560.0
+offset_bottom = 464.0
+grow_horizontal = 2
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 48
+text = "Font"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ResList" type="ItemList" parent="OptionsCanvas"]
-offset_left = 320.0
+offset_left = 256.0
 offset_top = 576.0
 offset_right = 512.0
 offset_bottom = 768.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 32
 item_count = 4
+max_columns = 2
 item_0/text = "800 x 450"
 item_1/text = "1280 x 720"
 item_2/text = "1600 x 900"
@@ -1257,20 +1432,46 @@ item_3/text = "1920 x 1080"
 [node name="ConfirmResolutionButton" type="Button" parent="OptionsCanvas"]
 offset_left = 576.0
 offset_top = 704.0
-offset_right = 832.0
+offset_right = 896.0
 offset_bottom = 768.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 32
 text = "Confirm Resolution"
 
 [node name="FullScreenToggleButton" type="Button" parent="OptionsCanvas"]
 offset_left = 576.0
 offset_top = 576.0
-offset_right = 832.0
+offset_right = 896.0
 offset_bottom = 640.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 32
 text = "Toggle Full Screen"
+
+[node name="GameBackgroundPicker" type="OptionButton" parent="OptionsCanvas"]
+offset_left = 1024.0
+offset_top = 280.0
+offset_right = 1280.0
+offset_bottom = 320.0
+theme = ExtResource("3_0a864")
+selected = 0
+item_count = 3
+popup/item_0/text = " Scrolling"
+popup/item_1/text = " Static"
+popup/item_1/id = 1
+popup/item_2/text = " Empty"
+popup/item_2/id = 2
+
+[node name="FontPicker" type="OptionButton" parent="OptionsCanvas"]
+offset_left = 1024.0
+offset_top = 472.0
+offset_right = 1280.0
+offset_bottom = 512.0
+theme = ExtResource("3_0a864")
+selected = 0
+item_count = 2
+popup/item_0/text = " Comic Neue (Comic)"
+popup/item_1/text = " Fifteen (Pixel)"
+popup/item_1/id = 1
 
 [node name="CreditsCanvas" type="CanvasLayer" parent="."]
 visible = false
@@ -1284,17 +1485,16 @@ offset_top = 64.0
 offset_right = 736.0
 offset_bottom = 832.0
 grow_horizontal = 2
-metadata/_edit_use_anchors_ = true
+theme = ExtResource("3_0a864")
 
 [node name="CloseCreditButton" type="Button" parent="CreditsCanvas"]
 offset_left = 1408.0
 offset_top = 112.0
 offset_right = 1488.0
 offset_bottom = 192.0
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "x"
-metadata/_edit_use_anchors_ = true
 
 [node name="Heading2" type="Label" parent="CreditsCanvas"]
 anchors_preset = 5
@@ -1305,7 +1505,7 @@ offset_top = 64.0
 offset_right = 384.0
 offset_bottom = 192.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 72
 text = "Credits"
 horizontal_alignment = 1
@@ -1315,12 +1515,12 @@ vertical_alignment = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -720.0
+offset_left = -704.0
 offset_top = 512.0
-offset_right = -336.0
+offset_right = -320.0
 offset_bottom = 766.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 32
 text = "Level Design
 Game Design
@@ -1329,53 +1529,70 @@ Art
 Sound Effects"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Heading6" type="Label" parent="CreditsCanvas"]
+[node name="Heading6" type="Label" parent="CreditsCanvas" groups=["theme_change_ignore"]]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -288.0
-offset_top = 192.0
-offset_right = 288.0
+offset_left = -320.0
+offset_top = 232.0
 offset_bottom = 448.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
-theme_override_font_sizes/font_size = 32
-text = "Fifteen font is made by
-James Kilfiger,
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 24
+text = "Comic Neue is made by
+Craig Rozynski and Hrant Papazian
 used under SIL Open Font License v1.1 
-(https://sites.google.com/site/jameskilfiger/)"
+(https://github.com/crozynski/comicneue)"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Heading10" type="Label" parent="CreditsCanvas" groups=["theme_change_ignore"]]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 232.0
+offset_right = 320.0
+offset_bottom = 448.0
+grow_horizontal = 2
+theme = ExtResource("40_hne7v")
+theme_override_font_sizes/font_size = 24
+text = "Fifteen font is made by James Kilfiger at https://sites.google.com/site/jameskilfiger/, used under SIL Open Font License v1.1 (http://james.kilfiger.googlepages.com/)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Heading8" type="Label" parent="CreditsCanvas"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -320.0
+offset_left = -224.0
 offset_top = 512.0
-offset_right = 320.0
+offset_right = 224.0
 offset_bottom = 768.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
-theme_override_font_sizes/font_size = 32
-text = "\"Jaunty Gumption\", \"Move Forward\"
+theme = ExtResource("3_0a864")
+theme_override_font_sizes/font_size = 24
+text = "\"Jaunty Gumption\", \"Move Forward\", \"Ambler\", \"Mellowtron\"
 Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0
 http://creativecommons.org/licenses/by/3.0/"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Heading4" type="Label" parent="CreditsCanvas"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -720.0
+offset_left = -712.0
 offset_top = 160.0
-offset_right = -336.0
+offset_right = -313.0
 offset_bottom = 232.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "RamChops Games
 "
@@ -1386,16 +1603,17 @@ vertical_alignment = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -192.0
-offset_top = 480.0
-offset_right = 192.0
-offset_bottom = 552.0
+offset_left = -224.0
+offset_top = 448.0
+offset_right = 224.0
+offset_bottom = 520.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Heading9" type="Label" parent="CreditsCanvas"]
 anchors_preset = 5
@@ -1406,9 +1624,9 @@ offset_top = 160.0
 offset_right = 192.0
 offset_bottom = 232.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
-text = "Font"
+text = "Fonts"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -1421,16 +1639,17 @@ offset_top = 472.0
 offset_right = 712.0
 offset_bottom = 544.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_nxc55")
+theme = ExtResource("3_0a864")
 theme_override_font_sizes/font_size = 48
 text = "Made with Godot"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CreditsCanvas"]
-offset_left = 144.0
+offset_left = 160.0
 offset_top = 232.0
-offset_right = 400.0
+offset_right = 416.0
 offset_bottom = 488.0
 texture = ExtResource("22_1d4fd")
 expand_mode = 1
@@ -1498,14 +1717,20 @@ parameters/looping = true
 [connection signal="pressed" from="MainMenuCanvas/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MainMenuCanvas/CreditsButton2" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MainMenuCanvas/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="TutorialCanvas/CloseTutorialButton" to="." method="_on_close_tutorial_button_pressed"]
+[connection signal="pressed" from="TutorialCanvas/CloseTutorialButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="TutorialCanvas/TutorialNextButton" to="." method="_on_tutorial_next_button_pressed"]
-[connection signal="pressed" from="TutorialCanvas2/CloseTutorialButton2" to="." method="_on_close_tutorial_button_2_pressed"]
+[connection signal="pressed" from="TutorialCanvas2/CloseTutorialButton2" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="TutorialCanvas2/TutorialNext2Button" to="." method="_on_tutorial_next_2_button_pressed"]
 [connection signal="pressed" from="TutorialCanvas2/TutorialBackButton" to="." method="_on_tutorial_back_button_pressed"]
-[connection signal="pressed" from="LevelPickerCanvas/CloseLevelPickerButton" to="." method="_on_close_level_picker_button_pressed"]
-[connection signal="pressed" from="OptionsCanvas/CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
+[connection signal="pressed" from="TutorialCanvas3/CloseTutorialButton3" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="TutorialCanvas3/TutorialBack2Button" to="." method="_on_tutorial_back_2_button_pressed"]
+[connection signal="pressed" from="LevelPickerCanvas/CloseLevelPickerButton" to="." method="_on_close_button_pressed"]
+[connection signal="item_selected" from="LevelPickerCanvas/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="OptionsCanvas/CloseOptionsButton" to="." method="_on_close_button_pressed"]
 [connection signal="drag_ended" from="OptionsCanvas/BGMSlider" to="." method="_on_bgm_slider_drag_ended"]
 [connection signal="drag_ended" from="OptionsCanvas/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="pressed" from="OptionsCanvas/ConfirmResolutionButton" to="." method="_on_confirm_resolution_button_pressed"]
 [connection signal="pressed" from="OptionsCanvas/FullScreenToggleButton" to="." method="_on_full_screen_toggle_button_pressed"]
-[connection signal="pressed" from="CreditsCanvas/CloseCreditButton" to="." method="_on_close_credit_button_pressed"]
+[connection signal="item_selected" from="OptionsCanvas/GameBackgroundPicker" to="." method="_on_game_background_picker_item_selected"]
+[connection signal="item_selected" from="OptionsCanvas/FontPicker" to="." method="_on_font_picker_item_selected"]
+[connection signal="pressed" from="CreditsCanvas/CloseCreditButton" to="." method="_on_close_button_pressed"]

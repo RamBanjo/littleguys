@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqycblpwhs6jo"]
+
+[ext_resource type="Theme" uid="uid://cyij5s8lhrrvn" path="res://Themes/little_guy_theme.tres" id="1_ajtk4"]
+[ext_resource type="Script" path="res://Scripts/score_explosion.gd" id="1_ystu7"]
+
+[node name="ScoreExplosion" type="Node2D"]
+script = ExtResource("1_ystu7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -128.0
+offset_top = -24.0
+offset_right = 128.0
+offset_bottom = 48.0
+mouse_filter = 2
+theme = ExtResource("1_ajtk4")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "5x100"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

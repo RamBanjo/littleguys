@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gxj23tnvo7xv"
+path="res://.godot/imported/Mellowtron 124 Melody.mp3-7e0a990382bb6c42246bf1e5e015ec0e.mp3str"
+
+[deps]
+
+source_file="res://Audio/BGM/Mellowtron 124 Melody.mp3"
+dest_files=["res://.godot/imported/Mellowtron 124 Melody.mp3-7e0a990382bb6c42246bf1e5e015ec0e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

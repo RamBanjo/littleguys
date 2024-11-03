@@ -33,12 +33,17 @@ func _physics_process(delta: float) -> void:
 	var motion = current_direction.y * delta * current_speed
 	self.move_local_y(motion)
 	
-	if close_enough_to_goal():
+	if has_reached_goal() or close_enough_to_goal():
 		current_speed = 0
 		current_direction *= -1
 		await get_tree().create_timer(terminal_delay).timeout
 		current_speed = movement_speed
 		
+func has_reached_goal():
+	if current_direction == Vector2.DOWN:
+		return self.global_position.y >= down_goal.y
+	else:
+		return self.global_position.y <= up_goal.y
 	
 
 func close_enough_to_goal():

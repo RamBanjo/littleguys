@@ -20,6 +20,7 @@ position = Vector2(448, 32)
 [node name="FullInterface" parent="." instance=ExtResource("4_30bv8")]
 
 [node name="AutoSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("5_n34eo")]
